@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        instrumentserif: ["Instrument Serif"],
-        manrope: ["Manrope"],
+        primary: ["Rouge Script"],
+        content: ["Urbanist"],
       },
       colors: {
         // Bleu Clair
