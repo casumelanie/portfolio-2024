@@ -1,29 +1,59 @@
 ---
 import "/src/assets/fonts/stylesheet.css";
+import Menu from "../components/common/Menu.astro";
 interface Props {
-	title: string;
+  title: string;
+  menuText: string;
 }
 
-const { title } = Astro.props;
+const { title, menuText } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative">
+    <Menu title={menuText} />
+    <slot />
+  </body>
 </html>
-<style is:global lang="postcss">
+<style is:global lang="postcss" define:vars={{ menuText: menuText }}>
 html {
-@apply bg-fantasy-50
+  @apply bg-fantasy-50
 }
 
+body,
+body * {
+  @apply font-content lg:text-xl tracking-[0.5px]
+}
+
+/* * {
+  line-height: normal !important;
+} */
+
+.title,
+.title span {
+  position: relative;
+  @apply lg:text-9xl font-primary
+}
+
+.title::after {
+  content: attr(data-menu-text);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  width: 100%;
+  opacity: 0.3;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #253a3c;
+  color: transparent;
+  z-index: 1;
+}
 </style>

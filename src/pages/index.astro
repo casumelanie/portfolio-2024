@@ -1,13 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+
+const title = "Mélanie Casu - portfolio";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main class="">
-		<h1 class="text-center text-firefly-900 font-instrumentserif text-6xl">Welcome to <span class="text-5xl text-geyser-500 font-manrope">portfolio</span></h1>
-		<p class="font-manrope text-firefly-900">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam nulla vitae ullamcorper pretium. Integer mauris sem, scelerisque non tempus nec, consequat vitae lectus. Nullam purus libero, efficitur eget odio in, mollis laoreet nisl. In gravida finibus augue, at hendrerit erat eleifend mollis. In at congue felis. Suspendisse iaculis posuere pulvinar. Quisque quis justo id quam cursus dictum. Donec vitae magna sed mauris dictum aliquet nec ut nibh.
-		</p>
-		<br>
-	</main>
+<Layout title={title} menuText="accueil">
+  <main class="h-[120vh]">
+    <h1
+      class="w-fit ml-7 title text-center text-firefly-900 z-10"
+      data-menu-text="homepage"
+    >
+      home<span class="text-geyser-500">page</span>.
+    </h1>
+    <p class="font-light mt-20 text-firefly-900">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam
+      nulla vitae ullamcorper pretium. Integer mauris sem, scelerisque non
+      tempus nec, consequat vitae lectus. Nullam purus libero, efficitur eget
+      odio in, mollis laoreet nisl. In gravida finibus augue, at hendrerit erat
+      eleifend mollis. In at congue felis. Suspendisse iaculis posuere pulvinar.
+      Quisque quis justo id quam cursus dictum. Donec vitae magna sed mauris
+      dictum aliquet nec ut nibh.
+    </p>
+  </main>
 </Layout>
