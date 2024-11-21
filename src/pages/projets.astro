@@ -1,24 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Introduction from "../components/common/Introduction.astro";
+import Listing from "../components/projects/Listing.astro";
+import listingProjects from "../../src/datas/projects.json";
 ---
 
 <Layout title="Projets" menuText="projets">
-  <main class="">
-    <h1
-      class="w-fit ml-7 title text-center text-firefly-900 z-10"
-      data-menu-text="projets"
-    >
-      projets<span class="text-geyser-500">.</span>
-    </h1>
-    <p class="font-light mt-20 text-firefly-900">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam
+  <Introduction
+    title="projets"
+    description=`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam
       nulla vitae ullamcorper pretium. Integer mauris sem, scelerisque non
       tempus nec, consequat vitae lectus. Nullam purus libero, efficitur eget
       odio in, mollis laoreet nisl. In gravida finibus augue, at hendrerit erat
-      eleifend mollis. In at congue felis. Suspendisse iaculis posuere pulvinar.
-      Quisque quis justo id quam cursus dictum. Donec vitae magna sed mauris
-      dictum aliquet nec ut nibh.
-    </p>
-    <br />
-  </main>
+      eleifend mollis.`
+    `
+  />
+
+  <Listing data={listingProjects} />
 </Layout>

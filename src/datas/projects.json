@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Eliophot",
+    "link": "https://www.eliophot.com/",
+    "type": "Entreprise",
+    "year": 2024,
+    "description": "Une refonte du site Eliophot, agence de communation et marketing 360, spécialisée dans les marques lifestyle prenium et luxe. Un projet réalisé par Eliophot.",
+    "image": {
+      "src": "/projets/test.webp",
+      "alt": ""
+    }
+  },
+  {
+    "name": "KV Hôtels",
+    "link": "https://www.kvhotels.com/",
+    "type": "Entreprise",
+    "year": 2024,
+    "description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse. Un projet réalisé par Eliophot.",
+    "image": {
+      "src": "/projets/test.webp",
+      "alt": ""
+    }
+  },
+  {
+    "name": "OhMyFood",
+    "link": "#",
+    "type": "École",
+    "year": 2024,
+    "description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+    "image": {
+      "src": "/projets/test.webp",
+      "alt": ""
+    }
+  }
+]

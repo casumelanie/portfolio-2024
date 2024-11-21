@@ -3,13 +3,16 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      screens: {
+        xs: "480px",
+      },
       fontFamily: {
         primary: ["Rouge Script"],
         content: ["Urbanist"],
       },
       colors: {
         // Bleu Clair
-        geyser: {
+        /*         geyser: {
           50: "#f6f9f9",
           100: "#ecf1f2",
           200: "#d6e0e2",
@@ -21,7 +24,7 @@ export default {
           800: "#3b4d51",
           900: "#344246",
           950: "#232c2e",
-        },
+        }, */
         // Bleu foncé
         firefly: {
           50: "#f4f9f9",

@@ -1,0 +1,35 @@
+---
+const { data } = Astro.props;
+import Separator from "../common/Separator.astro";
+import Button from "../common/Button.astro";
+---
+
+<section
+  class="projects-listing bg-firefly-500 flex flex-col items-center py-14 space-y-14 px-8"
+>
+  {
+    data.map((projet) => (
+      <div class="project text-fantasy-50">
+        <div class="relative w-[300px] h-[365px] mx-auto xs:h-[430px] xs:w-[340px] sm:h-[470px] sm:w-96 md:w-[600px]">
+          <img
+            class="h-80 relative z-20 w-[85%] object-cover object-center xs:h-96 sm:h-[420px]"
+            src={projet.image.src}
+            alt={projet.image.alt}
+          />
+          <div class="absolute bottom-0 p-3 h-80 w-[85%] flex justify-end items-end right-0 z-10 bg-transparent border-[1px] border-firefly-900 xs:h-96 sm:h-[420px]">
+            <h2 class="uppercase text-lg font-medium">{projet.name}</h2>
+          </div>
+        </div>
+        <div class="w-full space-y-8 flex flex-col mt-10">
+          <p>{projet.description}</p>
+          <Button
+            text="Visiter le site"
+            url={projet.link}
+            additionalClass="self-end"
+          />
+        </div>
+        <Separator additionalClass="mt-10" />
+      </div>
+    ))
+  }
+</section>

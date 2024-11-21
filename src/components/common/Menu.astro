@@ -22,13 +22,13 @@ const links = [
 
 <>
   <div
-    class="modal-menu z-20 pr-2 pt-2 pl-6 pb-24 flex flex-col justify-between items-start lg:flex-col-reverse lg:pb-5 lg:pt-48 lg:pr-5 lg:pl-12 fixed top-0 right-0 bottom-0 w-full h-screen lg:rounded-3xl lg:top-6 lg:right-6 lg:bottom-6 lg:w-1/2 2xl:w-1/3 bg-geyser-500"
+    class="modal-menu z-50 pr-2 pt-2 pl-6 pb-24 flex flex-col justify-between items-start lg:flex-col-reverse lg:pb-5 lg:pt-48 lg:pr-5 lg:pl-12 fixed top-0 right-0 bottom-0 w-full h-screen lg:rounded-3xl lg:top-6 lg:right-6 lg:bottom-6 lg:w-1/2 2xl:w-1/3 bg-firefly-500"
   >
     <div
       class="close-modal self-end group lg:cursor-pointer w-24 h-11 flex justify-center items-center rounded-full bg-fantasy-50 lg:h-[75px] lg:w-[75px] lg:hover:bg-firefly-900 lg:transition-colors"
     >
-      <span class="text-firefly-900 text-xl lg:group-hover:text-geyser-50"
-        >close</span
+      <span class="text-firefly-900 text-xl lg:group-hover:text-fantasy-50"
+        >fermer</span
       >
     </div>
     <ul class="space-y-3 lg:space-y-6">
@@ -36,7 +36,7 @@ const links = [
         links.map((link) => (
           <li>
             <a
-              class="link w-fit hover:text-firefly-900 text-3xl transition-colors text-firefly-50 leading-normal uppercase lg:text-6xl"
+              class="link w-fit hover:text-firefly-900 text-3xl transition-colors text-fantasy-50 leading-normal uppercase lg:text-6xl"
               href={link.url}
             >
               {link.text}
@@ -47,10 +47,10 @@ const links = [
     </ul>
   </div>
   <div
-    class="fixed-animated-menu w-full px-2 py-2 lg:p-0 flex justify-end z-10 lg:fixed lg:bottom-5 lg:right-5 lg:w-fit lg:h-fit"
+    class="fixed-animated-menu w-full px-3 py-2 lg:p-0 flex justify-end z-40 fixed lg:bottom-5 lg:right-5 lg:w-fit lg:h-fit"
   >
     <div
-      class="circle lg:cursor-pointer w-24 h-11 flex justify-center items-center lg:absolute lg:bottom-1/2 lg:right-1/2 z-10 lg:translate-x-1/2 lg:translate-y-1/2 rounded-full bg-firefly-900 lg:h-[75px] lg:w-[75px] lg:hover:bg-geyser-500 lg:transition-colors"
+      class="circle lg:cursor-pointer w-24 h-11 flex justify-center items-center lg:absolute lg:bottom-1/2 lg:right-1/2 z-40 lg:translate-x-1/2 lg:translate-y-1/2 rounded-full bg-firefly-900 lg:h-[75px] lg:w-[75px] lg:hover:bg-firefly-500 lg:transition-colors"
     >
       <span class="text-fantasy-50 text-xl">menu</span>
     </div>
@@ -67,7 +67,7 @@ const links = [
       </defs>
       <text>
         <textPath
-          class="text-geyser-500 lg:cursor-default"
+          class="text-firefly-900 lg:cursor-default"
           xlink:href="#circle"
         >
           {title}

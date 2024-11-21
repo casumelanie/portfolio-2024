@@ -1,0 +1,41 @@
+---
+interface Props {
+  url: string;
+  text: string;
+  additionalClass?: string;
+}
+
+const { url = "#", text = "Découvrir", additionalClass } = Astro.props;
+---
+
+<div
+  class=`btn group cursor-pointer bg-transparent block w-fit h-fit px-2 py-2 lg:hover:before:left-1 lg:hover:before:bottom-1 lg:hover:after:top-1 lg:hover:after:right-1 lg:hover:before:border-fantasy-50 lg:hover:after:border-fantasy-50 relative ${additionalClass}`
+>
+  <a
+    class="lg:group-hover:text-fantasy-50 transition-colors relative uppercase lg:text-firefly-900 font-medium z-20 px-1"
+    href={url}>{text}</a
+  >
+</div>
+
+<style lang="postcss" is:global>
+    .btn::before {
+        content: "";
+        @apply absolute bottom-0 left-0 w-3 h-3 border-b-[1px] border-l-[1px] rounded-bl-sm border-firefly-900;
+    }
+    .btn::after {
+        content: "";
+        @apply absolute top-0 right-0 w-3 h-3 border-t-[1px] border-r-[1px] rounded-tr-sm border-firefly-900;
+    }
+
+/* ANIMATION AU HOVER SUR LE BOUTON */
+    @media screen and (min-width: 1024px) {
+        .btn::before {
+            transition: left 0.5s, bottom 0.5s, color 0.5s
+        }
+
+        .btn::after {
+            transition: right 0.5s, top 0.5s, color 0.5s
+        }
+    }
+
+</style>

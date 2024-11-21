@@ -1,0 +1,13 @@
+---
+interface Props {
+  additionalClass?: string;
+}
+
+const { additionalClass } = Astro.props;
+---
+
+<div
+  class=`w-full flex justify-center items-center overflow-visible h-[1px] bg-firefly-900 ${additionalClass}`
+>
+  <div class="h-3 w-3 rounded-full bg-firefly-900"></div>
+</div>
