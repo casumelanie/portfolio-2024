@@ -1,171 +1,189 @@
 @font-face {
-    font-family: 'Rouge Script';
-    src: url('./RougeScript/RougeScript-Regular.woff2') format('woff2'),
-        url('./RougeScript/RougeScript-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Italiana";
+	src:
+		url("./Italiana/Italiana-Regular.woff2") format("woff2"),
+		url("./Italiana/Italiana-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Light.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Light.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-ExtraBoldItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-ExtraBoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-ExtraBoldItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-ExtraBoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Italic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Italic.woff') format('woff');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Italic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Italic.woff") format("woff");
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-ExtraBold.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-ExtraBold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-ExtraBold.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-ExtraBold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-ExtraLight.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-ExtraLight.woff') format('woff');
-    font-weight: 200;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-ExtraLight.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-ExtraLight.woff") format("woff");
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-BoldItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-BoldItalic.woff') format('woff');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-BoldItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-BoldItalic.woff") format("woff");
+	font-weight: bold;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Black.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Black.woff') format('woff');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Black.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Black.woff") format("woff");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-BlackItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-BlackItalic.woff') format('woff');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-BlackItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-BlackItalic.woff") format("woff");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-ExtraLightItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-ExtraLightItalic.woff') format('woff');
-    font-weight: 200;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-ExtraLightItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-ExtraLightItalic.woff") format("woff");
+	font-weight: 200;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Bold.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Bold.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Bold.woff") format("woff");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-SemiBold.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-SemiBold.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Medium.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Medium.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Medium.woff") format("woff");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-ThinItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-ThinItalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-ThinItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-ThinItalic.woff") format("woff");
+	font-weight: 100;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Thin.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Thin.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Thin.woff") format("woff");
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-Regular.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-Regular.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-Regular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-SemiBoldItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-SemiBoldItalic.woff') format('woff');
-    font-weight: 600;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-SemiBoldItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-SemiBoldItalic.woff") format("woff");
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-LightItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-LightItalic.woff') format('woff');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-LightItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-LightItalic.woff") format("woff");
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
 
 @font-face {
-    font-family: 'Urbanist';
-    src: url('./Urbanist/Urbanist-MediumItalic.woff2') format('woff2'),
-        url('./Urbanist/Urbanist-MediumItalic.woff') format('woff');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+	font-family: "Urbanist";
+	src:
+		url("./Urbanist/Urbanist-MediumItalic.woff2") format("woff2"),
+		url("./Urbanist/Urbanist-MediumItalic.woff") format("woff");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
 }
-
