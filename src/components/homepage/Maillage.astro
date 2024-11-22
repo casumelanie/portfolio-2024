@@ -1,0 +1,165 @@
+---
+
+---
+
+<section class="maillage flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
+	<div class="maillage-border pointer-events-none h-1/5 w-1/4 border-b-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-b-0 lg:border-r-2">
+	</div>
+	<div class="relative flex h-3/5 w-full items-center justify-center lg:h-full lg:w-10/12">
+		<div class="maillage-text">
+			<div class="split-text pointer-events-none text-fantasy-50">
+				<span class="char">d</span>
+				<span class="char">é</span>
+				<span class="char">c</span>
+				<span class="char">o</span>
+				<span class="char">u</span>
+				<span class="char">v</span>
+				<span class="char">r</span>
+				<span class="char">i</span>
+				<span class="char">r</span>
+			</div>
+			<div class="overflow-hidden text-center">
+				<span class="subtitle inline-block translate-y-full font-primary text-2xl text-fantasy-50 lg:text-3xl 2xl:text-5xl">
+					découvrir
+				</span>
+			</div>
+		</div>
+		<!-- FINIR LE PLACEMENT + ANIMATION DES CARDS LINK -->
+		<div
+			class="maillage-link absolute bottom-0 left-3 h-28 w-1/3 bg-firefly-900 opacity-0 lg:left-0 lg:top-10 lg:h-40 lg:w-96 lg:translate-x-10 2xl:h-48 2xl:w-[404px]"
+		>
+			<a
+				href="/a-propos"
+				class="flex h-full w-full items-center justify-center bg-fantasy-50/70 bg-texture bg-top text-center font-primary lg:text-3xl 2xl:text-4xl"
+			>
+				un peu plus <br /> sur moi
+			</a>
+		</div>
+		<div
+			class="maillage-link absolute bottom-0 right-5 h-28 w-1/3 bg-firefly-900 opacity-0 lg:bottom-10 lg:right-0 lg:h-40 lg:w-96 lg:-translate-x-20 2xl:bottom-16 2xl:h-48 2xl:w-[404px]"
+		>
+			<a
+				href="/projets"
+				class="flex h-full w-full items-center justify-center bg-fantasy-50/70 bg-texture bg-bottom text-center font-primary lg:text-3xl 2xl:text-4xl"
+			>
+				quelques <br />projets
+			</a>
+		</div>
+	</div>
+	<div
+		class="maillage-border pointer-events-none h-1/5 w-1/4 self-end border-t-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-l-2 lg:border-t-0"
+	>
+	</div>
+</section>
+
+<style lang="postcss">
+.split-text span {
+    @apply font-primary opacity-75 text-7xl lg:text-[180px] xl:text-[200px] 2xl:text-[250px];
+    display: inline-block;
+}
+</style>
+
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+
+	const splitText = document.querySelectorAll<HTMLElement>(".split-text .char");
+
+	/* FONCTION DE PLACEMENT ALÉATOIRE DES LETTRES */
+	function positionCharsRandomly() {
+		const parent = document.querySelector(".maillage");
+
+		// Dimensions du conteneur parent
+		const parentRect = parent.getBoundingClientRect();
+		const parentWidth = parentRect.width;
+		const parentHeight = parentRect.height;
+
+		// Vérification de la largeur de l'écran
+		const isMobileVersion = window.innerWidth <= 1023;
+
+		// Définir une plage pour limiter l'éparpillement (en pourcentage du conteneur)
+		const xRange = isMobileVersion ? parentWidth * 0.6 : parentWidth * 0.4; // 40% de la largeur du conteneur
+		const yRange = isMobileVersion ? parentHeight * 0.6 : parentHeight * 0.4; // 40% de la hauteur du conteneur
+
+		splitText.forEach((char) => {
+			// Générer des positions aléatoires
+			const randomX = Math.random() * xRange - xRange / 2; // Décalage horizontal aléatoire
+			const randomY = Math.random() * yRange - yRange / 2; // Décalage vertical aléatoire
+
+			// Générer des rotations aléatoires (entre -250° et 250°)
+			const randomRotationY = Math.random() * 500 - 250;
+
+			// Appliquer les transformations initiales via GSAP
+			gsap.set(char, {
+				x: randomX,
+				y: randomY,
+				rotationY: randomRotationY
+			});
+		});
+	}
+	// Appeler la fonction après le chargement de la page
+	window.addEventListener("load", positionCharsRandomly);
+
+	// MOBILE ANIMATION
+	let mmMobile = gsap.matchMedia();
+	mmMobile.add("(max-width: 1023px)", () => {
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".maillage",
+				start: "top top",
+				pin: true,
+				markers: true,
+				scrub: true,
+				end: "+=2000"
+			}
+		});
+
+		tl.to(".maillage-border", { width: "100%", duration: 1.2 });
+		tl.to(
+			splitText,
+			{
+				x: 0,
+				y: 0,
+				rotationY: 0,
+				duration: 1.4,
+				stagger: 0.05
+			},
+			"<"
+		);
+		tl.to(".maillage-text .subtitle", { translateY: "0", duration: "0.5" });
+		tl.to(".split-text", { opacity: 0.2, duration: "0.5" }, "<");
+		tl.to(".maillage-link", { opacity: 1 });
+	});
+
+	// DESKTOP ANIMATION
+	let mmDesktop = gsap.matchMedia();
+	mmDesktop.add("(min-width: 1024px)", () => {
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".maillage",
+				start: "top top",
+				pin: true,
+				markers: true,
+				scrub: true,
+				end: "+=2000"
+			}
+		});
+
+		tl.to(".maillage-border", { height: "100%", duration: 1 });
+		tl.to(
+			splitText,
+			{
+				x: 0,
+				y: 0,
+				rotationY: 0,
+				duration: 1.2,
+				stagger: 0.05
+			},
+			"<"
+		);
+		tl.to(".maillage-link", { opacity: 1 });
+		tl.to(".split-text", { opacity: 0.2 }, "<");
+		tl.to(".maillage-text .subtitle", { translateY: "0" }, "<");
+	});
+</script>
