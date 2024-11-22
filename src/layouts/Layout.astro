@@ -2,8 +2,8 @@
 import "/src/assets/fonts/stylesheet.css";
 import Menu from "../components/common/Menu.astro";
 interface Props {
-  title: string;
-  menuText: string;
+	title: string;
+	menuText: string;
 }
 
 const { title, menuText } = Astro.props;
@@ -11,18 +11,18 @@ const { title, menuText } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body class="relative">
-    <Menu title={menuText} />
-    <slot />
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="relative">
+		<Menu title={menuText} />
+		<slot />
+	</body>
 </html>
 <style is:global lang="postcss" define:vars={{ menuText: menuText }}>
 html {
@@ -36,24 +36,21 @@ body * {
   word-spacing: 1px;
 }
 
+.title {
+  @apply font-primary;
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 1023px) {
-  .title,
-  .title span {
+  .title {
     writing-mode: vertical-rl;
     text-orientation: mixed;
     @apply rotate-180 translate-y-1/3;
   }
 }
 
-.title,
-.title span {
-  @apply font-primary;
-  white-space: nowrap;
-}
-
 @media screen and (min-width: 1024px) {
-  .title,
-  .title span {
+  .title {
     @apply text-9xl;
   }
 }
