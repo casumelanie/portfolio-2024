@@ -1,5 +1,4 @@
 ---
-const { title } = Astro.props;
 const links = [
 	{
 		text: "accueil",
@@ -44,61 +43,16 @@ const links = [
 			}
 		</ul>
 	</div>
-	<div class="fixed-animated-menu fixed z-40 flex w-full justify-end px-3 py-2 lg:bottom-5 lg:right-5 lg:h-fit lg:w-fit lg:p-0">
+	<div class="fixed-menu fixed z-40 flex w-full justify-end px-3 py-2 lg:bottom-7 lg:right-7 lg:h-fit lg:w-fit lg:p-0">
 		<div
-			class="circle z-40 flex h-11 w-24 items-center justify-center rounded-full bg-firefly-900 lg:absolute lg:bottom-1/2 lg:right-1/2 lg:h-[75px] lg:w-[75px] lg:translate-x-1/2 lg:translate-y-1/2 lg:cursor-pointer lg:transition-colors lg:hover:bg-firefly-500"
+			class="circle z-40 flex h-11 w-24 items-center justify-center rounded-full border-2 border-fantasy-50 bg-firefly-900 lg:h-[75px] lg:w-[75px] lg:cursor-pointer lg:transition-colors lg:hover:bg-firefly-500"
 		>
 			<span class="text-xl text-fantasy-50">menu</span>
 		</div>
-		<svg class="hidden lg:block" viewBox="0 0 100 100" width="125" height="125">
-			<defs>
-				<path id="circle" d="
-        M 50, 50
-        m -37, 0
-        a 37,37 0 1,1 74,0
-        a 37,37 0 1,1 -74,0"></path>
-			</defs>
-			<text>
-				<textPath class="text-firefly-900 lg:cursor-default" xlink:href="#circle">
-					{title}
-				</textPath>
-			</text>
-		</svg>
 	</div>
 </>
 
 <style is:global lang="postcss">
-  /* MENU BOUTON */
-@media screen and (min-width: 1024px) {
-  svg {
-    fill: currentColor;
-    height: auto;
-    max-width: 125px;
-    transform-origin: center;
-    width: auto;
-  }
-
-  .fixed-animated-menu textPath {
-    font-size: 14px !important;
-    text-transform: lowercase;
-  }
-
-  .fixed-animated-menu svg {
-    animation: infiniteRotate 20s linear infinite;
-  }
-
-  @keyframes infiniteRotate {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
-  .fixed-animated-menu .circle:hover ~ svg,
-  .modal-menu.active ~ .fixed-animated-menu svg {
-    animation-play-state: paused;
-  }
-}
-
 /* MODALE */
 .modal-menu {
   transform: translateX(calc(100% + 2rem));
@@ -117,7 +71,7 @@ const links = [
 </style>
 
 <script>
-	const btnMenu = document.querySelector(".fixed-animated-menu .circle");
+	const btnMenu = document.querySelector(".fixed-menu .circle");
 	const modal = document.querySelector(".modal-menu");
 	const btnClose = document.querySelector(".close-modal");
 	btnMenu.addEventListener("click", () => {
