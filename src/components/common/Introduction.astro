@@ -6,10 +6,8 @@
 const { title, description, image } = Astro.props;
 ---
 
-<section class="lg:flex lg:h-screen lg:flex-row lg:flex-nowrap">
-	<div class="flex h-[30dvh] items-end justify-start bg-firefly-900 lg:h-full lg:w-1/4 lg:items-start lg:justify-end">
-		<!-- TAILLE DU TITRE A ADAPTER APRÈS TYPO DEFINITIVE -->
-		<!-- Ajouter une ombre ? -->
+<section class="bg-fantasy-50 lg:flex lg:h-screen lg:flex-row lg:flex-nowrap">
+	<div class="flex h-[30vh] items-end justify-start bg-firefly-900 bg-texture lg:h-full lg:w-1/4 lg:items-start lg:justify-end">
 		<h1 class="title relative z-10 w-fit text-firefly-500 lg:mt-24 lg:translate-x-1/3" data-menu-text="projets">
 			{title}.
 		</h1>
@@ -17,8 +15,8 @@ const { title, description, image } = Astro.props;
 	<div
 		class="lg:flex lg:h-full lg:w-3/4 lg:flex-row lg:space-x-10 lg:p-3 lg:pt-20 xl:space-x-16 xl:p-10 xl:pt-28 2xl:space-x-32 2xl:p-14 2xl:pt-36"
 	>
-		<div class="flex h-[70dvh] flex-col items-end justify-between px-3 py-10 lg:h-full lg:w-1/3 lg:flex-row lg:p-0 xl:w-2/5">
-			<!-- À CHANGER -->
+		<div class="flex h-[70vh] flex-col items-end justify-between px-3 py-10 lg:h-full lg:w-1/3 lg:flex-row lg:p-0 xl:w-2/5">
+			<!-- À CHANGER POUR SOURCE IMAGE -->
 			<img class="h-[90%] w-3/5 object-cover object-center lg:h-[50vh] lg:w-full xl:h-[60vh]" src="/projets/test.webp" alt="lorem" />
 			<div class="mt-6 h-[1px] w-3/4 self-center bg-firefly-500 lg:hidden lg:h-40 lg:w-[1px]"></div>
 		</div>

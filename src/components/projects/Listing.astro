@@ -5,7 +5,7 @@ import Button from "../common/Button.astro";
 ---
 
 <section
-	class="projects-listing flex flex-col items-center space-y-14 bg-firefly-700 bg-texture px-8 py-14 xl:space-y-28 xl:px-14 2xl:px-36"
+	class="projects-listing flex flex-col items-center space-y-14 bg-firefly-900 bg-texture px-8 py-14 xl:space-y-28 xl:px-14 2xl:px-36"
 >
 	{
 		data.map((projet) => (
@@ -17,7 +17,7 @@ import Button from "../common/Button.astro";
 							src={projet.image.src}
 							alt={projet.image.alt}
 						/>
-						<div class="absolute bottom-0 right-0 z-10 flex h-80 w-[85%] items-end justify-end border-[1px] border-firefly-900 bg-firefly-500 bg-transparent p-3 xs:h-96 sm:h-[420px] xl:h-[580px] xl:p-4 xl:group-odd:left-0 xl:group-odd:justify-start">
+						<div class="absolute bottom-0 right-0 z-10 flex h-80 w-[85%] items-end justify-end border-[1px] border-fantasy-50 bg-transparent p-3 xs:h-96 sm:h-[420px] xl:h-[580px] xl:p-4 xl:group-odd:left-0 xl:group-odd:justify-start">
 							<h2 class="font-primary text-lg font-medium xl:text-2xl 2xl:text-3xl">{projet.name}</h2>
 						</div>
 					</div>
