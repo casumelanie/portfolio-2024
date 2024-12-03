@@ -1,12 +1,14 @@
 ---
 import "/src/assets/fonts/stylesheet.css";
 import Menu from "../components/common/Menu.astro";
+import Footer from "../components/common/Footer.astro";
+
 interface Props {
 	title: string;
-	menuText: string;
+	textureFooter: boolean;
 }
 
-const { title, menuText } = Astro.props;
+const { title, textureFooter } = Astro.props;
 ---
 
 <!doctype html>
@@ -41,9 +43,10 @@ const { title, menuText } = Astro.props;
 		</div>
 		<Menu />
 		<slot />
+		<Footer textureFooter={textureFooter} />
 	</body>
 </html>
-<style is:global lang="postcss" define:vars={{ menuText: menuText }}>
+<style is:global lang="postcss">
 body * {
   @apply font-content font-light lg:text-xl tracking-[1px];
   line-height: normal !important;
@@ -77,7 +80,8 @@ body * {
 </style>
 <script>
 	import gsap from "gsap";
-	const modal = document.querySelector(".modal-menu");
+	const modal = document.querySelector<HTMLElement>(".modal-menu");
+	const isDesktopVersion = window.innerWidth >= 1024;
 
 	// TRANSITION DE PAGE
 	let tlEnter = gsap.timeline({});
@@ -90,14 +94,15 @@ body * {
 
 	// Animation de sortie
 	const pageExit = async () => {
-		if (modal.classList.contains("active")) {
-			modal.classList.remove("active");
+		if (modal.classList.contains("active") && isDesktopVersion) {
+			modal.style.transition = "opacity 0.5s";
+			modal.style.opacity = "0";
 		}
 		return tlExit.to("body", { overflow: "hidden" }, "<").to(
 			"#transition-wrapper",
 			{
 				translateY: 0,
-				duration: 1,
+				duration: 0.8,
 				ease: "power1.inOut"
 			},
 			"<"
@@ -106,24 +111,21 @@ body * {
 
 	// Animation d'entrée
 	const pageEnter = async () => {
-		return (
-			tlEnter
-				.to("body", { overflow: "hidden" })
-				// Rajouter animation du logo
-				.to("#transition-wrapper #logo", { opacity: 1, duration: 1, delay: 0.25 }, "<")
-				.fromTo("#transition-wrapper #logo #c", { fill: "#f9f5f300" }, { fill: "#f9f5f3", duration: 0.8 })
-				.fromTo("#transition-wrapper #logo #m", { opacity: 0 }, { opacity: 1, duration: 0.8 }, "<")
-				.fromTo("#transition-wrapper #logo #point", { opacity: 0 }, { opacity: 1, duration: 0.8 })
-				.to("#transition-wrapper", { translateY: "-100%", duration: 1, ease: "power1.inOut" })
-				.to("main", { opacity: 1 }, "<")
-				.to("body", { overflow: "visible" })
-				.to("#transition-wrapper #logo", { opacity: 0 })
-		);
+		return tlEnter
+			.to("body", { overflow: "hidden" })
+			.to("#transition-wrapper #logo", { opacity: 1, duration: 0.7, delay: 0.2 }, "<")
+			.fromTo("#transition-wrapper #logo #c", { fill: "#f9f5f300" }, { fill: "#f9f5f3", duration: 0.85 })
+			.fromTo("#transition-wrapper #logo #m", { opacity: 0 }, { opacity: 1, duration: 0.85 }, "<")
+			.fromTo("#transition-wrapper #logo #point", { opacity: 0 }, { opacity: 1, duration: 0.85 })
+			.to("#transition-wrapper", { translateY: "-100%", duration: 0.8, ease: "power1.inOut" })
+			.to("main", { opacity: 1 }, "<")
+			.to("body", { overflow: "visible" })
+			.to("#transition-wrapper #logo", { opacity: 0 });
 	};
 
 	// Gestion du clic sur les liens et des animations
 	const setupTransitions = () => {
-		const links = document.querySelectorAll("a");
+		const links = document.querySelectorAll("a.nav");
 
 		// Pour tous les liens :
 		links.forEach((link) => {

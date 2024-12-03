@@ -1,0 +1,195 @@
+---
+const skills = [
+	{
+		img: {
+			src: "/skills/astro-mono.svg",
+			alt: "Logo Astro"
+		},
+		imgRvb: {
+			src: "/skills/astro-couleur.svg",
+			alt: "Logo Astro"
+		},
+		text: "Astro"
+	},
+	{
+		img: {
+			src: "/skills/react-mono.svg",
+			alt: "Logo React"
+		},
+		imgRvb: {
+			src: "/skills/react-couleur.svg",
+			alt: "Logo React"
+		},
+		text: "React"
+	},
+	{
+		img: {
+			src: "/skills/redux-mono.svg",
+			alt: "Logo Redux"
+		},
+		imgRvb: {
+			src: "/skills/redux-couleur.svg",
+			alt: "Logo Redux"
+		},
+		text: "Redux"
+	},
+
+	{
+		img: {
+			src: "/skills/gsap-mono.svg",
+			alt: "Logo GSAP"
+		},
+		imgRvb: {
+			src: "/skills/gsap-couleur.svg",
+			alt: "Logo GSAP"
+		},
+		text: "GSAP"
+	},
+	{
+		img: {
+			src: "/skills/html-mono.svg",
+			alt: "Logo HTML 5"
+		},
+		imgRvb: {
+			src: "/skills/html-couleur.svg",
+			alt: "Logo HTML 5 couleur"
+		},
+		text: "HTML"
+	},
+	{
+		img: {
+			src: "/skills/css-mono.svg",
+			alt: "Logo CSS 3"
+		},
+		imgRvb: {
+			src: "/skills/css-couleur.svg",
+			alt: "Logo CSS 3"
+		},
+		text: "CSS"
+	},
+	{
+		img: {
+			src: "/skills/sass-mono.svg",
+			alt: "Logo Sass"
+		},
+		imgRvb: {
+			src: "/skills/sass-couleur.svg",
+			alt: "Logo Sass"
+		},
+		text: "SASS"
+	},
+	{
+		img: {
+			src: "/skills/javascript-mono.svg",
+			alt: "Logo Javascript"
+		},
+		imgRvb: {
+			src: "/skills/javascript-couleur.svg",
+			alt: "Logo Javascript"
+		},
+		text: "Javascript"
+	},
+	{
+		img: {
+			src: "/skills/wordpress-mono.svg",
+			alt: "Logo Wordpress"
+		},
+		imgRvb: {
+			src: "/skills/wordpress-couleur.svg",
+			alt: "Logo Wordpress"
+		},
+		text: "Wordpress"
+	},
+	{
+		img: {
+			src: "/skills/shopify-mono.svg",
+			alt: "Logo CSS 3"
+		},
+		imgRvb: {
+			src: "/skills/shopify-couleur.svg",
+			alt: "Logo CSS 3"
+		},
+		text: "Shopify"
+	},
+	{
+		img: {
+			src: "/skills/elementor-mono.svg",
+			alt: "Logo Elementor"
+		},
+		imgRvb: {
+			src: "/skills/elementor-couleur.svg",
+			alt: "Logo Elementor"
+		},
+		text: "Elementor"
+	},
+	{
+		img: {
+			src: "/skills/tailwind-mono.svg",
+			alt: "Logo Tailwind"
+		},
+		imgRvb: {
+			src: "/skills/tailwind-couleur.svg",
+			alt: "Logo Tailwind"
+		},
+		text: "Tailwind"
+	},
+	{
+		img: {
+			src: "/skills/typescript-mono.svg",
+			alt: "Logo Typescript"
+		},
+		imgRvb: {
+			src: "/skills/typescript-couleur.svg",
+			alt: "Logo Typescript"
+		},
+		text: "Typescript"
+	}
+];
+---
+
+<section class="flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 md:px-10">
+	<h2
+		class="relative z-10 w-fit self-end text-end font-primary text-5xl text-firefly-900 lg:h-1/5 lg:self-start lg:text-start lg:text-7xl xl:text-8xl"
+	>
+		J'ai travaillé avec
+	</h2>
+	<div class="mt-20 flex w-full flex-row flex-wrap justify-between self-start lg:h-4/5">
+		<div class="mx-auto flex w-full max-w-3xl flex-row flex-wrap justify-between gap-y-4">
+			{
+				skills.map((skill) => (
+					<div class="h-fit w-1/3 lg:w-1/4">
+						<div class="skill mx-auto h-28 w-fit overflow-hidden pb-6">
+							<img
+								class="relative mx-auto mb-8 h-20 w-20 object-contain object-center"
+								src={skill.img.src}
+								alt={skill.img.alt}
+							/>
+							<div class="img-couleur mx-auto flex h-28 w-full flex-col items-center justify-between">
+								<img
+									class="relative mx-auto h-20 w-20 object-contain object-center"
+									src={skill.imgRvb.src}
+									alt={skill.imgRvb.alt}
+								/>
+								<span class="inline-block w-full text-center text-base lowercase">{skill.text}</span>
+							</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+</section>
+<style>
+	@media screen and (min-width: 1024px) {
+		.skill > img,
+		.skill .img-couleur {
+			transition: all 0.7s;
+		}
+		.skill:hover > img {
+			transform: translateY(-100%);
+		}
+		.skill:hover .img-couleur {
+			transform: translateY(-100%);
+		}
+	}
+</style>
