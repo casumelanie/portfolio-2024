@@ -5,8 +5,8 @@ import Listing from "../components/projects/Listing.astro";
 import listingProjects from "../../src/datas/projects.json";
 ---
 
-<Layout title="Projets" menuText="projets">
-	<main class="opacity-0">
+<Layout title="Projets" textureFooter={true}>
+	<main class="bg-fantasy-50 bg-texture opacity-0">
 		<Introduction
 			title="projets"
 			description=`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam
@@ -15,6 +15,10 @@ import listingProjects from "../../src/datas/projects.json";
       odio in, mollis laoreet nisl. In gravida finibus augue, at hendrerit erat
       eleifend mollis.`
 			`
+			image={{
+				src: "/projets/lofi-web.webp",
+				description: "lorem"
+			}}
 		/>
 
 		<Listing data={listingProjects} />

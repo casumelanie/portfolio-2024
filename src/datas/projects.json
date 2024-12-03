@@ -4,9 +4,13 @@
 		"link": "https://www.eliophot.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Une refonte du site Eliophot, agence de communation et marketing 360, spécialisée dans les marques lifestyle prenium et luxe. Un projet réalisé par Eliophot.",
+		"description": "Une refonte du site Eliophot, agence de communation et marketing 360, spécialisée dans les marques lifestyle prenium et luxe.",
 		"image": {
-			"src": "/projets/test.webp",
+			"src": "/projets/eliophot.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/eliophot-mobile.png",
 			"alt": ""
 		}
 	},
@@ -15,20 +19,88 @@
 		"link": "https://www.kvhotels.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse. Un projet réalisé par Eliophot.",
+		"description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse.",
 		"image": {
-			"src": "/projets/test.webp",
+			"src": "/projets/kvhotels.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/kvhotels-mobile.png",
+			"alt": ""
+		}
+	},
+	{
+		"name": "La folie des prés",
+		"link": "https://www.hotelfoliedespres.com/",
+		"type": "Entreprise",
+		"year": 2024,
+		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"image": {
+			"src": "/projets/folie-des-pres.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/folie-des-pres-mobile.png",
+			"alt": ""
+		}
+	},
+	{
+		"name": "The Social Club",
+		"link": "https://www.the-social-club.com/",
+		"type": "Entreprise",
+		"year": 2024,
+		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"image": {
+			"src": "/projets/tsc.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/tsc-mobile.png",
 			"alt": ""
 		}
 	},
 	{
 		"name": "OhMyFood",
 		"link": "#",
-		"type": "École",
+		"type": "Ecole",
 		"year": 2024,
 		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
 		"image": {
-			"src": "/projets/test.webp",
+			"src": "/projets/eliophot.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/eliophot-mobile.png",
+			"alt": ""
+		}
+	},
+	{
+		"name": "Kasa",
+		"link": "#",
+		"type": "Ecole",
+		"year": 2024,
+		"description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse.",
+		"image": {
+			"src": "/projets/kvhotels.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/eliophot-mobile.png",
+			"alt": ""
+		}
+	},
+	{
+		"name": "Sophie Bluel",
+		"link": "#",
+		"type": "Ecole",
+		"year": 2024,
+		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"image": {
+			"src": "/projets/eliophot.png",
+			"alt": ""
+		},
+		"imageMobile": {
+			"src": "/projets/eliophot-mobile.png",
 			"alt": ""
 		}
 	}

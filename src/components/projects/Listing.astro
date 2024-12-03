@@ -4,31 +4,92 @@ import Separator from "../common/Separator.astro";
 import Button from "../common/Button.astro";
 ---
 
-<section
-	class="projects-listing flex flex-col items-center space-y-14 bg-firefly-900 bg-texture px-8 py-14 xl:space-y-28 xl:px-14 2xl:px-36"
->
+<section class="projects-listing flex flex-col items-center space-y-14 py-14 lg:space-y-24 xl:space-y-40 xl:py-24">
 	{
 		data.map((projet) => (
-			<div class="project group text-fantasy-50 xl:h-screen">
-				<div class="xl:flex xl:h-full xl:flex-row-reverse xl:items-center xl:gap-20 xl:group-even:flex-row">
-					<div class="relative mx-auto h-[365px] w-[300px] xs:h-[430px] xs:w-[340px] sm:h-[470px] sm:w-96 md:w-[600px] xl:h-[650px] xl:w-1/2 xl:group-odd:flex xl:group-odd:justify-end">
-						<img
-							class="relative z-20 h-80 w-[85%] object-cover object-center xs:h-96 sm:h-[420px] xl:h-[580px]"
-							src={projet.image.src}
-							alt={projet.image.alt}
-						/>
-						<div class="absolute bottom-0 right-0 z-10 flex h-80 w-[85%] items-end justify-end border-[1px] border-fantasy-50 bg-transparent p-3 xs:h-96 sm:h-[420px] xl:h-[580px] xl:p-4 xl:group-odd:left-0 xl:group-odd:justify-start">
-							<h2 class="font-primary text-lg font-medium xl:text-2xl 2xl:text-3xl">{projet.name}</h2>
+			<div class="project group text-firefly-900">
+				<div class="px-3 lg:px-12 xl:flex xl:h-full xl:flex-row-reverse xl:items-center xl:justify-between xl:gap-16 xl:px-0 xl:group-even:flex-row 2xl:gap-32">
+					{/* IMAGE MOBILE */}
+					<img
+						class="mx-auto h-[65vh] w-auto rounded-2xl object-contain lg:hidden"
+						src={projet.imageMobile.src}
+						alt={projet.imageMobile.alt}
+					/>
+					{/* IMAGE DESKTOP */}
+					<img
+						class="img-desktop hidden lg:mx-auto lg:block lg:h-full lg:w-4/5 lg:rounded-xl lg:object-contain lg:blur-sm xl:mx-0 xl:w-7/12 xl:rounded-none xl:group-odd:rounded-l-xl xl:group-odd:rounded-r-none xl:group-even:rounded-l-none xl:group-even:rounded-r-xl"
+						src={projet.image.src}
+						alt={projet.image.alt}
+					/>
+					<div class="flex w-full flex-col space-y-8 text-firefly-900 xl:h-1/2 xl:w-5/12 xl:justify-center xl:group-odd:items-end xl:group-odd:pl-12 xl:group-even:pr-12 2xl:group-odd:pl-32 2xl:group-even:pr-32">
+						<div class="mx-auto w-fit overflow-hidden xl:mx-0">
+							<h2 class="mt-6 font-primary text-5xl text-firefly-900 group-odd:text-end lg:translate-y-full xl:mt-0 xl:text-6xl 2xl:text-7xl">
+								{projet.name}
+							</h2>
+						</div>
+						<div class="content flex w-full flex-col text-center lg:opacity-0 xl:group-odd:text-end xl:group-even:text-start">
+							<p class=" text-firefly-900 xl:text-2xl">{projet.description}</p>
+							{projet.type === "Entreprise" && (
+								<p class="mt-2">
+									Un projet réalisé par
+									<a class="" target="_blank" href="https://www.eliophot.com/">
+										Eliophot
+									</a>
+								</p>
+							)}
+							<Button text={`Visiter ${projet.name}`} url={projet.link} additionalClass="mt-6 self-center xl:self-end" />
 						</div>
 					</div>
-					<div class="mt-10 flex w-full flex-col space-y-8 xl:mt-0 xl:h-1/2 xl:w-1/2 xl:justify-center xl:gap-40">
-						<p class="">{projet.description}</p>
-						<Button text="Visiter le site" url={projet.link} additionalClass="self-end xl:self-center" />
-					</div>
 				</div>
-
-				<Separator additionalClass="mt-10 xl:hidden" />
+				<Separator additionalClass="mt-14 lg:hidden" />
 			</div>
 		))
 	}
 </section>
+<style lang="postcss">
+	@media screen and (max-width: 1279px) {
+		.project img {
+			box-shadow: -5px 5px 10px 1px rgba(37,58,60,0.2);
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+	.project:nth-of-type(odd) img {
+		box-shadow: -5px 5px 10px 1px rgba(37,58,60,0.2);
+	}
+
+	.project:nth-of-type(even) img {
+		box-shadow: 5px 5px 10px 1px rgba(37,58,60,0.2);
+	}
+	}
+
+</style>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+
+	const projects = document.querySelectorAll<HTMLElement>(".project");
+	// MOBILE ANIMATION
+	let mmMobile = gsap.matchMedia();
+	mmMobile.add("(max-width: 1023px)", () => {});
+
+	// DESKTOP ANIMATION
+	let mmDesktop = gsap.matchMedia();
+	mmDesktop.add("(min-width: 1024px)", () => {
+		projects.forEach((project) => {
+			let tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: project,
+					start: "top 30%"
+				}
+			});
+			let title = project.querySelector("h2");
+			let image = project.querySelector(".img-desktop");
+			let content = project.querySelector(".content");
+			tl.to(image, { filter: "blur(0px)", duration: 1 });
+			tl.to(title, { translateY: 0, duration: 0.65 }, "<");
+			tl.to(content, { opacity: 1, duration: 1 });
+		});
+	});
+</script>
