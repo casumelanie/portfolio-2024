@@ -1,22 +1,5 @@
 ---
-const links = [
-	{
-		text: "accueil",
-		url: "/"
-	},
-	{
-		text: "projets",
-		url: "/projets"
-	},
-	{
-		text: "à propos",
-		url: "/#a-propos"
-	},
-	{
-		text: "contact",
-		url: "/#contact"
-	}
-];
+const { menuLinks } = Astro.props;
 ---
 
 <>
@@ -30,10 +13,10 @@ const links = [
 		</div>
 		<ul class="mt-20 space-y-3 lg:space-y-6 lg:pl-7">
 			{
-				links.map((link) => (
+				menuLinks.map((link) => (
 					<li>
 						<a
-							class="link nav w-fit text-4xl uppercase leading-normal text-fantasy-50 transition-colors hover:text-firefly-900 lg:text-6xl"
+							class={`link w-fit text-4xl uppercase leading-normal text-fantasy-50 transition-colors hover:text-firefly-900 lg:text-6xl ${link.transition ? "nav" : ""}`}
 							href={link.url}
 						>
 							{link.text}

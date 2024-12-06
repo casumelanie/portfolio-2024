@@ -1,173 +1,109 @@
 ---
-
----
-
-<!-- TODO : GERER LES CARDS CLIQUABLES AU DEBUT DE L'ANIMATION -->
-<section class="maillage flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
-	<div
-		class="maillage-border pointer-events-none h-[15%] w-1/4 border-b-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-b-0 lg:border-r-2"
-	>
-	</div>
-	<div class="relative flex h-[70%] w-full items-center justify-center lg:h-full lg:w-10/12">
-		<div class="maillage-text">
-			<div class="split-text pointer-events-none flex flex-row flex-nowrap text-fantasy-50">
-				<span class="char">d</span>
-				<span class="char">é</span>
-				<span class="char">c</span>
-				<span class="char">o</span>
-				<span class="char">u</span>
-				<span class="char">v</span>
-				<span class="char">r</span>
-				<span class="char">i</span>
-				<span class="char">r</span>
-			</div>
-			<div class="overflow-hidden text-center">
-				<span
-					class="subtitle inline-block translate-y-full font-primary text-2xl text-fantasy-50 md:text-4xl xl:text-5xl 2xl:text-6xl"
-				>
-					découvrir
-				</span>
-			</div>
-		</div>
-		<div
-			class="maillage-link absolute bottom-3 left-5 h-20 w-2/5 max-w-52 bg-firefly-900 opacity-0 sm:left-10 sm:h-28 sm:w-1/3 md:h-32 md:max-w-none lg:left-0 lg:top-10 lg:h-40 lg:w-96 lg:translate-x-10 2xl:h-48 2xl:w-[404px]"
-		>
-			<div
-				class="pointer-events-none absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-firefly-900 lg:top-3 lg:h-3 lg:w-3"
-			>
-			</div>
-			<a
-				href="#a-propos"
-				class="flex h-full w-full items-center justify-center bg-fantasy-50/70 bg-texture bg-top text-center font-primary md:text-2xl lg:text-3xl 2xl:text-4xl"
-			>
-				un peu plus <br /> sur moi
-			</a>
-		</div>
-		<div
-			class="maillage-link absolute bottom-3 right-5 h-20 w-2/5 max-w-52 bg-firefly-900 opacity-0 sm:right-10 sm:h-28 sm:w-1/3 md:h-32 md:max-w-none lg:bottom-10 lg:right-0 lg:h-40 lg:w-96 lg:-translate-x-20 2xl:bottom-16 2xl:h-48 2xl:w-[404px]"
-		>
-			<div
-				class="pointer-events-none absolute left-1/2 top-2 h-2 w-2 -translate-x-1/2 rounded-full bg-firefly-900 lg:top-3 lg:h-3 lg:w-3"
-			>
-			</div>
-
-			<a
-				href="/projets"
-				class="nav flex h-full w-full items-center justify-center bg-fantasy-50/70 bg-texture bg-bottom text-center font-primary md:text-2xl lg:text-3xl 2xl:text-4xl"
-			>
-				quelques <br />projets
-			</a>
-		</div>
-	</div>
-	<div
-		class="maillage-border pointer-events-none h-[15%] w-1/4 self-end border-t-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-l-2 lg:border-t-0"
-	>
-	</div>
-</section>
-
-<style is:global lang="postcss">
-.split-text span {
-	@apply inline-block font-primary opacity-75 text-7xl text-[150px] md:text-[250px] lg:text-[300px] xl:text-[350px] 2xl:text-[400px];
-	transform-origin: 50% 50%;
+interface Props {
+	text: string;
+	link: string;
 }
 
-	.maillage-link {
-		clip-path: polygon(10% 0, 90% 0, 100% 20%, 100% 80%, 90% 100%, 10% 100%, 0 80%, 0 20%);	}
-</style>
+const { text, link } = Astro.props;
+---
 
-<script>
-	import gsap from "gsap";
-	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
-	gsap.registerPlugin(ScrollTrigger);
-
-	const splitText = document.querySelectorAll<HTMLElement>(".split-text .char");
-
-	/* FONCTION DE PLACEMENT ALÉATOIRE DES LETTRES */
-	function positionCharsRandomly() {
-		// const isMobileVersion = window.innerWidth <= 1023;
-
-		splitText.forEach((char) => {
-			// Générer des positions / rotations aléatoires
-			const randomY = Math.random() * 600 - 300; // entre -300px et 300px
-			const randomZ = Math.random() * 50 - 50 / 2; // Décalage en profondeur
-			const randomRotationY = Math.random() * 1000 - 500; // entre -500° et 500°
-
-			// Appliquer les transformations initiales via GSAP
-			gsap.set(char, {
-				y: randomY,
-				z: randomZ,
-				rotationY: randomRotationY
-			});
-		});
+<!-- TODO : rajouter curseur, + habiller un peu le bloc (images ?) -->
+<section class="maillage flex h-screen w-full items-center bg-fantasy-50 py-10">
+	<div class="relative h-fit w-full">
+		<a href={link} class="nav absolute left-0 top-0 z-10 h-full w-full"></a>
+		<div class="marquee pointer-events-none flex w-full flex-row flex-nowrap overflow-hidden py-2 sm:py-3 lg:py-3 xl:py-5">
+			<ul class="marquee-right flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+				<li class="text-outline font-bebas">{text}</li>
+				<li class="font-zenloop">{text}</li>
+				<li class="font-nothing capitalize">{text}</li>
+			</ul>
+			<ul class="marquee-right-bis flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+				<li class="text-outline font-bebas">{text}</li>
+				<li class="font-zenloop">{text}</li>
+				<li class="font-nothing capitalize">{text}</li>
+			</ul>
+		</div>
+		<div class="marquee pointer-events-none flex w-full flex-row flex-nowrap overflow-hidden py-2 sm:py-3 xl:py-5">
+			<ul class="marquee-left flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+				<li class="font-primary capitalize">{text}</li>
+				<li class="font-sixcaps uppercase">{text}</li>
+				<li class="text-outline font-abril lowercase">{text}</li>
+			</ul>
+			<ul class="marquee-left-bis flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
+				<li class="font-primary capitalize">{text}</li>
+				<li class="font-sixcaps uppercase">{text}</li>
+				<li class="text-outline font-abril lowercase">{text}</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<style lang="postcss">
+	/* STYLES DES TEXTES */
+	.text-outline {
+		-webkit-text-stroke-width: 1px;
+  		-webkit-text-stroke-color: #253a3c;
+  		color: transparent !important;
 	}
-	// Appeler la fonction après le chargement de la page
-	window.addEventListener("load", positionCharsRandomly);
 
-	// MOBILE ANIMATION
-	let mmMobile = gsap.matchMedia();
-	mmMobile.add("(max-width: 1023px)", () => {
-		let tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".maillage",
-				start: "top top",
-				pin: true,
-				scrub: true,
-				end: "+=2000"
-			}
-		});
+	.marquee ul li {
+		@apply text-5xl sm:text-6xl md:text-7xl xl:text-8xl leading-snug
+	}
 
-		tl.to(".maillage-border", { width: "100%", duration: 1.2 });
-		tl.to(
-			splitText,
-			{
-				y: 0,
-				z: 0,
-				fontSize: "20vw",
-				rotationY: 0,
-				duration: 1.2,
-				stagger: {
-					from: "random",
-					ease: "power2.in"
-				}
-			},
-			"<"
-		);
-		tl.to(".maillage-text .subtitle", { translateY: "0", duration: "0.5" });
-		tl.to(".split-text", { opacity: 0.2, duration: "0.5" }, "<");
-		tl.to(".maillage-link", { opacity: 1 });
-	});
+	/* DÉFILEMENT INFINI */
+	.maillage li {
+		white-space: nowrap;
+		@apply text-firefly-900 w-fit inline-block;
+	}
 
-	// DESKTOP ANIMATION
-	let mmDesktop = gsap.matchMedia();
-	mmDesktop.add("(min-width: 1024px)", () => {
-		let tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".maillage",
-				start: "top top",
-				pin: true,
-				scrub: true,
-				end: "+=2000"
-			}
-		});
+	.marquee {
+		white-space: nowrap;
+	}
 
-		tl.to(".maillage-border", { height: "100%", duration: 1 });
-		tl.to(
-			splitText,
-			{
-				y: 0,
-				z: 0,
-				fontSize: "15vw",
-				rotationY: 0,
-				duration: 1.2,
-				stagger: {
-					from: "random",
-					ease: "power2.in"
-				}
-			},
-			"<"
-		);
-		tl.to(".maillage-text .subtitle", { translateY: "0", duration: "0.5" });
-		tl.to(".split-text", { opacity: 0.2, duration: "0.5" }, "<");
-		tl.to(".maillage-link", { opacity: 1 });
-	});
-</script>
+	.marquee-left {
+		animation: scroll-left 40s -20s linear infinite;
+	}
+	.marquee-left-bis {
+		animation: scroll-left-bis 40s linear infinite;
+	}
+
+	@keyframes scroll-left {
+		from {
+			transform: translateX(100%);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+	@keyframes scroll-left-bis {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-200%);
+		}
+	}
+
+	.marquee-right {
+		animation: scroll-right 40s -20s linear infinite;
+	}
+	.marquee-right-bis {
+		animation: scroll-right-bis 40s linear infinite;
+	}
+
+	@keyframes scroll-right {
+		from {
+			transform: translateX(-100%);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+	@keyframes scroll-right-bis {
+		from {
+			transform: translateX(-200%);
+		}
+		to {
+			transform: translateX(0);
+		}
+	}
+</style>

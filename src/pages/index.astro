@@ -3,22 +3,36 @@ import Layout from "../layouts/Layout.astro";
 import Maillage from "../components/homepage/Maillage.astro";
 import Introduction from "../components/common/Introduction.astro";
 import Skills from "../components/homepage/Skills.astro";
+import Hero from "../components/homepage/Hero.astro";
 
 const title = "Mélanie Casu - portfolio";
+
+const menuLinks = [
+	{
+		text: "accueil",
+		url: "/",
+		transition: true
+	},
+	{
+		text: "projets",
+		url: "/projets",
+		transition: true
+	},
+	{
+		text: "à propos",
+		url: "#a-propos",
+		transition: false
+	},
+	{
+		text: "contact",
+		url: "#contact",
+		transition: false
+	}
+];
 ---
 
-<Layout title={title} textureFooter={false}>
-	<main class="opacity- h-screen bg-fantasy-50">
-		<h1 class="title z-10 ml-7 w-fit text-center text-firefly-900">Homepage.</h1>
-		<p class="mt-20 font-light text-firefly-900">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquam nulla vitae ullamcorper pretium. Integer mauris sem,
-			scelerisque non tempus nec, consequat vitae lectus. Nullam purus libero, efficitur eget odio in, mollis laoreet nisl. In gravida
-			finibus augue, at hendrerit erat eleifend mollis. In at congue felis. Suspendisse iaculis posuere pulvinar. Quisque quis justo
-			id quam cursus dictum. Donec vitae magna sed mauris dictum aliquet nec ut nibh.
-		</p>
-	</main>
-
-	<Maillage />
+<Layout menuLinks={menuLinks} isHome={true} title={title} textureFooter={false}>
+	<Hero />
 	<div id="a-propos">
 		<Introduction
 			title="à propos"
@@ -37,10 +51,7 @@ dictum aliquet nec ut nibh.`
 		/>
 	</div>
 
+	<Maillage text="voir mes projets" link="/projets" />
+
 	<Skills />
 </Layout>
-<style>
-	html {
-		scroll-behavior: smooth;
-	}
-</style>

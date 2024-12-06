@@ -11,10 +11,10 @@ const { textureFooter } = Astro.props;
 		<div
 			class="flex h-full flex-col flex-nowrap items-center justify-start p-6 pt-14 lg:flex-row lg:justify-between lg:pl-20 lg:pr-40 lg:pt-6"
 		>
-			<img class="w-40 md:w-48 lg:w-56" src="/logos/logo-beige.svg" alt="Logo Mélanie Casu" />
+			<img class="logo w-40 opacity-5 md:w-48 lg:w-56" src="/logos/logo-beige.svg" alt="Logo Mélanie Casu" />
 
-			<div class="mt-[20vh] space-y-12 text-fantasy-50 lg:mt-0">
-				<div class="space-y-4">
+			<div class="mt-[20vh] space-y-12 overflow-hidden text-fantasy-50 lg:mt-0">
+				<div class="link -translate-x-full space-y-4">
 					<p class="font-semibold uppercase">Me retrouver sur</p>
 
 					<ul class="space-y-4 text-fantasy-50">
@@ -26,11 +26,30 @@ const { textureFooter } = Astro.props;
 						</li>
 					</ul>
 				</div>
-				<a class="inline-block w-full text-center uppercase lg:w-fit" href="mailto:melanie.casu-pro@outlook.fr">Me contacter</a>
+				<a
+					class="link inline-block w-full -translate-x-full text-center uppercase lg:w-fit"
+					href="mailto:melanie.casu-pro@outlook.fr">Me contacter</a
+				>
 			</div>
 		</div>
-		<div class="flex h-20 w-full items-center border-t-[1px] border-fantasy-50">
-			<p class="mx-auto text-center text-sm text-fantasy-50">Mélanie Casu - 2024</p>
+		<div class="more-info relative flex h-20 w-full flex-col items-center justify-center">
+			<div class="absolute left-0 top-0 h-[1px] w-0 justify-self-start bg-fantasy-50"></div>
+			<p class="text-center text-sm text-fantasy-50 opacity-0">Mélanie Casu - 2024</p>
 		</div>
 	</div>
 </footer>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#contact",
+			start: "top 5%"
+		}
+	});
+	tl.to("#contact .logo", { opacity: 1, duration: 1 });
+	tl.to("#contact .more-info div", { width: "100%", duration: 1 }, "-=0.5");
+	tl.to("#contact .more-info p", { opacity: 1, duration: 0.5 });
+	tl.to("#contact .link", { translateX: 0, duration: 1 });
+</script>

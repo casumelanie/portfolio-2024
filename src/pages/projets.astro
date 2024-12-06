@@ -3,9 +3,32 @@ import Layout from "../layouts/Layout.astro";
 import Introduction from "../components/common/Introduction.astro";
 import Listing from "../components/projects/Listing.astro";
 import listingProjects from "../../src/datas/projects.json";
+
+const menuLinks = [
+	{
+		text: "accueil",
+		url: "/",
+		transition: true
+	},
+	{
+		text: "projets",
+		url: "/projets",
+		transition: true
+	},
+	{
+		text: "à propos",
+		url: "/#a-propos",
+		transition: true
+	},
+	{
+		text: "contact",
+		url: "#contact",
+		transition: false
+	}
+];
 ---
 
-<Layout title="Projets" textureFooter={true}>
+<Layout menuLinks={menuLinks} isHome={false} title="Projets" textureFooter={true}>
 	<main class="bg-fantasy-50 bg-texture opacity-0">
 		<Introduction
 			title="projets"

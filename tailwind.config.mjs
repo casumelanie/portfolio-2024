@@ -11,7 +11,12 @@ export default {
 			},
 			fontFamily: {
 				primary: ["Italiana"],
-				content: ["Urbanist"]
+				content: ["Urbanist"],
+				abril: ["Abril Fatface"],
+				bebas: ["Bebas Neue"],
+				nothing: ["Nothing You Could Do"],
+				sixcaps: ["Six Caps"],
+				zenloop: ["Zen Loop"]
 			},
 			colors: {
 				// Bleu foncé

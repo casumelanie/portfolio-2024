@@ -6,9 +6,11 @@ import Footer from "../components/common/Footer.astro";
 interface Props {
 	title: string;
 	textureFooter: boolean;
+	isHome: boolean;
+	menuLinks: any;
 }
 
-const { title, textureFooter } = Astro.props;
+const { title, textureFooter, isHome, menuLinks } = Astro.props;
 ---
 
 <!doctype html>
@@ -21,7 +23,7 @@ const { title, textureFooter } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative bg-firefly-900">
+	<body class={`relative bg-firefly-900 ${isHome ? "" : "no-home"}`}>
 		<div id="transition-wrapper" class="fixed left-0 top-0 z-[99] flex h-screen w-full items-center justify-center bg-firefly-900">
 			<svg
 				id="logo"
@@ -41,15 +43,19 @@ const { title, textureFooter } = Astro.props;
 					fill="transparent"></path></svg
 			>
 		</div>
-		<Menu />
+		<Menu menuLinks={menuLinks} />
 		<slot />
 		<Footer textureFooter={textureFooter} />
 	</body>
 </html>
 <style is:global lang="postcss">
+html {
+	scroll-behavior: smooth;
+}
+
 body * {
   @apply font-content font-light lg:text-xl tracking-[1px];
-  line-height: normal !important;
+  /* line-height: normal !important; */
   word-spacing: 1px;
 }
 
@@ -119,7 +125,7 @@ body * {
 			.fromTo("#transition-wrapper #logo #point", { opacity: 0 }, { opacity: 1, duration: 0.85 })
 			.to("#transition-wrapper", { translateY: "-100%", duration: 0.8, ease: "power1.inOut" })
 			.to("main", { opacity: 1 }, "<")
-			.to("body", { overflow: "visible" })
+			.to("body.no-home", { overflow: "visible" })
 			.to("#transition-wrapper #logo", { opacity: 0 });
 	};
 
