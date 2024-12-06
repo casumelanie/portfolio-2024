@@ -4,14 +4,14 @@
 		"link": "https://www.eliophot.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Une refonte du site Eliophot, agence de communation et marketing 360, spécialisée dans les marques lifestyle prenium et luxe.",
+		"description": "Refonte du site Eliophot, agence de communation et marketing 360, spécialisée dans les marques lifestyle prenium et luxe.",
 		"image": {
 			"src": "/projets/eliophot.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web de l'entreprise Eliophot avec un design moderne"
 		},
 		"imageMobile": {
 			"src": "/projets/eliophot-mobile.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web de l'entreprise Eliophot avec un design moderne"
 		}
 	},
 	{
@@ -19,14 +19,14 @@
 		"link": "https://www.kvhotels.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse.",
+		"description": "Conception d'un multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse.",
 		"image": {
 			"src": "/projets/kvhotels.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web du groupe KV Hôtels avec un design moderne et une vue sur la montagne"
 		},
 		"imageMobile": {
 			"src": "/projets/kvhotels-mobile.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web du groupe KV Hôtels avec un design moderne et une vue sur la montagne"
 		}
 	},
 	{
@@ -34,14 +34,14 @@
 		"link": "https://www.hotelfoliedespres.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"description": "Développement d'un site web pour un hôtel 3 étoiles situé à Paris. Un site web original et chaleureux tout en couleur, accompagné d'une légère touche de folie.",
 		"image": {
 			"src": "/projets/folie-des-pres.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web de l'hôtel Folie des prés avec un design moderne et coloré"
 		},
 		"imageMobile": {
 			"src": "/projets/folie-des-pres-mobile.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web de l'hôtel Folie des prés avec un design moderne et coloré"
 		}
 	},
 	{
@@ -49,14 +49,14 @@
 		"link": "https://www.the-social-club.com/",
 		"type": "Entreprise",
 		"year": 2024,
-		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"description": "Développement d'un site web moderne et élégant, le tout accompagné d'animations fluides et délicates.",
 		"image": {
 			"src": "/projets/tsc.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web du groupe The Social Club avec un design élégant et raffiné"
 		},
 		"imageMobile": {
 			"src": "/projets/tsc-mobile.png",
-			"alt": ""
+			"alt": "Capture d'écran du site web du groupe The Social Club avec un design élégant et raffiné"
 		}
 	},
 	{
@@ -64,14 +64,14 @@
 		"link": "#",
 		"type": "Ecole",
 		"year": 2024,
-		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"description": "Intégrer une maquette en mobile-first et implémenter des animations avec SASS, sur la base d'une maquette Figma.",
 		"image": {
-			"src": "/projets/eliophot.png",
-			"alt": ""
+			"src": "/projets/ohmyfood.png",
+			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
 		},
 		"imageMobile": {
-			"src": "/projets/eliophot-mobile.png",
-			"alt": ""
+			"src": "/projets/ohmyfood-mobile.png",
+			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
 		}
 	},
 	{
@@ -79,14 +79,14 @@
 		"link": "#",
 		"type": "Ecole",
 		"year": 2024,
-		"description": "Multi-site regroupant un ensemble d'établissements (hôtels, restaurants, boutiques) situés à Verbier, en Suisse.",
+		"description": "Implémenter le front-end de cette application de location de logements, le tout de façon responsive.",
 		"image": {
-			"src": "/projets/kvhotels.png",
-			"alt": ""
+			"src": "/projets/kasa.png",
+			"alt": "Capture d'écran du site web Kasa"
 		},
 		"imageMobile": {
-			"src": "/projets/eliophot-mobile.png",
-			"alt": ""
+			"src": "/projets/kasa-mobile.png",
+			"alt": "Capture d'écran du site web Kasa"
 		}
 	},
 	{
@@ -94,14 +94,14 @@
 		"link": "#",
 		"type": "Ecole",
 		"year": 2024,
-		"description": "Un projet qui consiste en l'intégration d'une maquette en mobile-first, avec l'implémentation d'animations. Utilisation de SASS, sur la base de Figma.",
+		"description": "Rendre le site web de cette architecte d'intérieur dynamique et fonctionnel.",
 		"image": {
-			"src": "/projets/eliophot.png",
-			"alt": ""
+			"src": "/projets/sophie-bluel.png",
+			"alt": "Capture d'écran du site web de la photographe Sophie Bluel"
 		},
 		"imageMobile": {
-			"src": "/projets/eliophot-mobile.png",
-			"alt": ""
+			"src": "/projets/sophie-bluel-mobile.png",
+			"alt": "Capture d'écran du site web de la photographe Sophie Bluel"
 		}
 	}
 ]

@@ -26,12 +26,17 @@ const { title, textureFooter, isHome, menuLinks } = Astro.props;
 	<body class={`relative bg-firefly-900 ${isHome ? "" : "no-home"}`}>
 		<div id="transition-wrapper" class="fixed left-0 top-0 z-[99] flex h-screen w-full items-center justify-center bg-firefly-900">
 			<svg
+				role="img"
+				aria-labelledby="logoTitle logoDesc"
 				id="logo"
 				class="mx-auto w-40 opacity-0 md:w-48 lg:w-72"
 				version="1.0"
 				viewBox="39.59 121.14 312.05 130.8"
 				xmlns="http://www.w3.org/2000/svg"
-				><path
+			>
+				<title id="logoTitle">Logo représentant un C inversé, un M et un point</title>
+				<desc id="logoDesc">Logo combinant un C inversé, un M et un point dans un design minimaliste.</desc>
+				<path
 					id="point"
 					d="M343.563 250.754c-2.187 0-4.086-.797-5.687-2.39-1.594-1.602-2.39-3.54-2.39-5.813 0-2.27.753-4.16 2.265-5.672 1.52-1.52 3.414-2.281 5.687-2.281 2.27 0 4.204.804 5.797 2.406 1.602 1.594 2.407 3.484 2.407 5.672 0 2.187-.805 4.086-2.407 5.687-1.593 1.594-3.484 2.39-5.672 2.39zm0 0"
 					fill="#468686"></path><path
@@ -133,7 +138,7 @@ body * {
 	const setupTransitions = () => {
 		const links = document.querySelectorAll("a.nav");
 
-		// Pour tous les liens :
+		// Pour les liens nécessitants un changement de page :
 		links.forEach((link) => {
 			link.addEventListener("click", async (event) => {
 				event.preventDefault(); // Empêcher le comportement par défaut au clic

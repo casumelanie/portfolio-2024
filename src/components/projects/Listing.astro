@@ -28,6 +28,7 @@ import Button from "../common/Button.astro";
 							</h2>
 						</div>
 						<div class="content flex w-full flex-col text-center lg:opacity-0 xl:group-odd:text-end xl:group-even:text-start">
+							{projet.type === "Ecole" && <p class="">OBJECTIF</p>}
 							<p class=" text-firefly-900 xl:text-2xl">{projet.description}</p>
 							{projet.type === "Entreprise" && (
 								<p class="mt-2">
@@ -37,7 +38,13 @@ import Button from "../common/Button.astro";
 									</a>
 								</p>
 							)}
-							<Button text={`Visiter ${projet.name}`} url={projet.link} additionalClass="mt-6 self-center xl:self-end" />
+							{projet.type === "Ecole" && <p class="mt-2">Projet réalisé dans le cadre de ma formation</p>}
+							<Button
+								isExternalLink={true}
+								text={`Visiter le site ${projet.name}`}
+								url={projet.link}
+								additionalClass="mt-6 self-center xl:self-end"
+							/>
 						</div>
 					</div>
 				</div>
