@@ -3,37 +3,42 @@
 ---
 
 <!-- TODO: AJOUTER UN SCROLL DOWN A LA FIN DE L'ANIMATION -->
-<section class="hero flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
-	<div class="hero-border pointer-events-none h-[15%] w-1/4 border-b-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-b-0 lg:border-r-2">
+<section class="hero relative z-40 flex h-dvh flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
+	<div class="relative flex h-[15%] w-full flex-col justify-end lg:h-full lg:w-[10%] lg:flex-row">
+		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-0 lg:rotate-180">portfolio</p>
+		<div class="hero-border w-0 border-b-2 border-fantasy-50 opacity-65 lg:h-0 lg:border-b-0 lg:border-r-2"></div>
 	</div>
-	<div class="relative flex h-[70%] w-full items-center justify-center lg:h-full lg:w-10/12">
+	<div class="relative flex h-[70%] w-full items-center justify-center lg:h-full lg:w-[90%]">
 		<div class="hero-text">
-			<div class="split-text pointer-events-none flex flex-row flex-nowrap text-fantasy-50">
-				<span class="char">M</span>
-				<span class="char">é</span>
-				<span class="char">l</span>
-				<span class="char">a</span>
-				<span class="char">n</span>
-				<span class="char">i</span>
-				<span class="char">e</span>
-				<span class="char inline-block w-14"></span>
-				<span class="char">C</span>
-				<span class="char">a</span>
-				<span class="char">s</span>
-				<span class="char">u</span>
+			<div class="split-text pointer-events-none flex flex-col items-center text-fantasy-50">
+				<p class="flex flex-row flex-nowrap">
+					<span class="char">M</span>
+					<span class="char">é</span>
+					<span class="char">l</span>
+					<span class="char">a</span>
+					<span class="char">n</span>
+					<span class="char">i</span>
+					<span class="char">e</span>
+				</p>
+				<p>
+					<span class="char">C</span>
+					<span class="char">a</span>
+					<span class="char">s</span>
+					<span class="char">u</span>
+				</p>
 			</div>
-			<div class="overflow-hidden text-center">
-				<span
-					class="subtitle inline-block translate-y-full font-primary text-2xl text-fantasy-50 md:text-4xl xl:text-5xl 2xl:text-6xl"
+			<div class="mt-6 overflow-hidden text-center">
+				<h1
+					class="subtitle inline-block translate-y-full font-primary text-2xl text-fantasy-50 md:text-4xl lg:pb-4 xl:text-5xl 2xl:text-6xl"
 				>
-					portfolio
-				</span>
+					développeuse intégratrice web
+				</h1>
 			</div>
 		</div>
 	</div>
-	<div
-		class="hero-border pointer-events-none h-[15%] w-1/4 self-end border-t-2 border-fantasy-50 lg:h-0 lg:w-1/12 lg:border-l-2 lg:border-t-0"
-	>
+	<div class="relative flex h-[15%] w-full flex-col items-end justify-start lg:h-full lg:w-[10%] lg:items-start lg:justify-end">
+		<div class="hero-border w-0 border-t-2 border-fantasy-50 opacity-65 lg:h-0 lg:border-l-2 lg:border-t-0"></div>
+		<!-- fleche scroll down -->
 	</div>
 </section>
 
@@ -41,6 +46,19 @@
 .split-text span {
 	@apply inline-block font-primary opacity-75 text-7xl text-[150px] md:text-[250px] lg:text-[300px] xl:text-[350px] 2xl:text-[400px];
 	transform-origin: 50% 50%;
+}
+
+.text-decoratif {
+	font-size: 19vw;
+	line-height: 0.70;
+}
+
+@media screen and (min-width: 1024px) {
+	.text-decoratif {
+		writing-mode: vertical-rl;
+		text-orientation: mixed;
+		font-size: 10vw;
+	}
 }
 </style>
 
@@ -76,7 +94,7 @@
 	let mmMobile = gsap.matchMedia();
 	mmMobile.add("(max-width: 1023px)", () => {
 		let tl = gsap.timeline({});
-		tl.to(".hero-border", { width: "100%", duration: 1, delay: 4 }, "<");
+		tl.to(".hero-border", { width: "100%", duration: 1, delay: 3.2 }, "<");
 		tl.to(
 			splitText,
 			{
@@ -92,8 +110,9 @@
 			},
 			"<"
 		);
-		tl.to(".hero-text .subtitle", { translateY: "0", duration: "0.8" });
-		tl.to(".split-text", { opacity: 0.2, duration: "1" }, "<");
+		tl.to(".hero-text h1", { translateY: "0", duration: 0.8 });
+		tl.to(".split-text", { opacity: 0.5, duration: 1 }, "<");
+		tl.to(".text-decoratif", { opacity: 0.05, duration: 0.5 });
 		tl.to("body", { overflow: "visible" });
 	});
 
@@ -101,7 +120,7 @@
 	let mmDesktop = gsap.matchMedia();
 	mmDesktop.add("(min-width: 1024px)", () => {
 		let tl = gsap.timeline({});
-		tl.to(".hero-border", { height: "100%", duration: 1, delay: 4 });
+		tl.to(".hero-border", { height: "100%", duration: 1, delay: 3.5 });
 		tl.to(
 			splitText,
 			{
@@ -117,8 +136,10 @@
 			},
 			"<"
 		);
-		tl.to(".hero-text .subtitle", { translateY: "0", duration: "0.8" });
-		tl.to(".split-text", { opacity: 0.2, duration: "1" }, "<");
+		tl.to(".hero-text h1", { translateY: "0", duration: 0.8 });
+		tl.to(".split-text", { opacity: 0.2, duration: 1 }, "<");
+		tl.to(".text-decoratif", { opacity: 0.05, duration: 0.5 });
+
 		tl.to("body", { overflow: "visible" });
 	});
 </script>
