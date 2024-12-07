@@ -147,18 +147,21 @@ const skills = [
 ];
 ---
 
-<section class="flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 md:px-10">
-	<h2
-		class="relative z-10 w-fit self-end text-end font-primary text-5xl text-firefly-900 lg:h-1/5 lg:self-start lg:text-start lg:text-7xl xl:text-8xl"
-	>
-		J'ai travaillé avec
-	</h2>
+<section class="skills flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 md:px-10">
+	<div class="overflow-hidden">
+		<h2
+			class="relative z-10 w-fit translate-y-full self-end text-end font-primary text-5xl text-firefly-900 lg:h-1/5 lg:self-start lg:text-start lg:text-7xl xl:text-8xl"
+		>
+			J'ai travaillé avec
+		</h2>
+	</div>
+
 	<div class="mt-20 flex w-full flex-row flex-wrap justify-between self-start lg:h-4/5">
 		<div class="mx-auto flex w-full max-w-3xl flex-row flex-wrap justify-between gap-y-4">
 			{
 				skills.map((skill) => (
 					<div class="h-fit w-1/3 lg:w-1/4">
-						<div class="skill mx-auto h-28 w-fit overflow-hidden pb-6">
+						<div class="skill mx-auto h-28 w-fit overflow-hidden pb-6 opacity-5">
 							<img
 								class="relative mx-auto mb-8 h-20 w-20 object-contain object-center"
 								src={skill.img.src}
@@ -193,3 +196,26 @@ const skills = [
 		}
 	}
 </style>
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+	// DESKTOP ANIMATION
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".skills",
+			start: "top 50%"
+		}
+	});
+	tl.to("h2", { translateY: 0, duration: 1 });
+	tl.to(".skill", {
+		opacity: 1,
+		duration: 1.25,
+		stagger: {
+			from: "random",
+			ease: "none",
+			amount: 2,
+			each: 2
+		}
+	});
+</script>
