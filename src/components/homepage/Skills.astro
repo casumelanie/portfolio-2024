@@ -147,7 +147,7 @@ const skills = [
 ];
 ---
 
-<section class="skills flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 md:px-10">
+<section class="skills flex flex-col justify-center overflow-hidden bg-fantasy-50 p-4 md:px-10 lg:pt-20">
 	<div class="overflow-hidden">
 		<h2
 			class="relative w-fit translate-y-full self-end text-end font-primary text-5xl text-firefly-900 lg:h-1/5 lg:self-start lg:text-start lg:text-7xl xl:text-8xl"
@@ -200,7 +200,6 @@ const skills = [
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 	gsap.registerPlugin(ScrollTrigger);
-	// DESKTOP ANIMATION
 	let tl = gsap.timeline({
 		scrollTrigger: {
 			trigger: ".skills",

@@ -24,7 +24,10 @@ const { title, textureFooter, isHome, menuLinks } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class={`relative bg-firefly-900 ${isHome ? "" : "no-home"}`}>
-		<div id="transition-wrapper" class="fixed left-0 top-0 z-[99] flex h-screen w-full items-center justify-center bg-firefly-900">
+		<div
+			id="transition-wrapper"
+			class="fixed left-0 top-0 z-[99] flex h-screen w-full items-center justify-center border-b-2 border-fantasy-50 bg-firefly-900"
+		>
 			<svg
 				role="img"
 				aria-labelledby="logoTitle logoDesc"
@@ -64,7 +67,7 @@ body * {
   word-spacing: 1px;
 }
 
-.title {
+/* .title {
   @apply font-primary;
   white-space: nowrap;
 }
@@ -81,7 +84,7 @@ body * {
   .title {
     @apply lg:text-8xl xl:text-9xl 2xl:text-[150px];
   }
-}
+} */
 
 /* LOGO ANIMÉ */
 #transition-wrapper #logo #c {

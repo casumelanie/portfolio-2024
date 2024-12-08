@@ -32,7 +32,7 @@ const menuLinks = [
 
 <Layout menuLinks={menuLinks} isHome={true} title={title} textureFooter={false}>
 	<Hero />
-	<div id="a-propos">
+	<!-- 	<div id="a-propos">
 		<section class="introduction bg-fantasy-50 bg-texture lg:h-screen">
 			<div class="flex h-[30vh] items-end justify-center overflow-hidden bg-firefly-900 bg-texture">
 				<p class="intro-title relative z-10 translate-y-[110%] font-primary uppercase text-fantasy-50">à propos.</p>
@@ -57,13 +57,17 @@ const menuLinks = [
 				</div>
 			</div>
 		</section>
-	</div>
+	</div> -->
+	<section class="h-screen bg-fantasy-50"></section>
 
 	<Maillage text="voir mes projets" link="/projets" />
 
 	<Skills />
 </Layout>
-<style lang="postcss">
+<style lang="postcss" is:global>
+	.gradient {
+		background: linear-gradient(180deg, rgba(37,58,60,1) 10%, rgba(249,245,243,1) 100%);
+	}
 	/* PROVISOIRE, CEST LE STYLE DE LANCIEN BLOC INTRO */
 	@media screen and (min-width: 1024px) {
     .intro-description::before {
