@@ -11,7 +11,9 @@ const { textureFooter } = Astro.props;
 		<div
 			class="flex h-full flex-col flex-nowrap items-center justify-start p-6 pt-14 lg:flex-row lg:justify-between lg:pl-20 lg:pr-40 lg:pt-6"
 		>
-			<img class="logo w-40 opacity-5 md:w-48 lg:w-56" src="/logos/logo-beige.svg" alt="Logo de Mélanie Casu en beige" />
+			<a href="/">
+				<img class="logo w-40 opacity-5 md:w-48 lg:w-56" src="/logos/logo-beige.svg" alt="Logo de Mélanie Casu en beige" />
+			</a>
 
 			<div class="mt-[20vh] space-y-12 overflow-hidden text-fantasy-50 lg:mt-0">
 				<div class="link -translate-x-full space-y-4">
@@ -19,15 +21,23 @@ const { textureFooter } = Astro.props;
 
 					<ul class="space-y-4 text-fantasy-50">
 						<li class="text-center lg:text-start">
-							<a class="uppercase" href="https://github.com/casumelanie" target="_blank">github</a>
+							<a
+								class="uppercase transition-colors hover:text-firefly-500"
+								href="https://github.com/casumelanie"
+								target="_blank">github</a
+							>
 						</li>
 						<li class="text-center lg:text-start">
-							<a class="uppercase" href="https://www.linkedin.com/in/m%C3%A9laniecasu/" target="_blank">linkedin</a>
+							<a
+								class="uppercase transition-colors hover:text-firefly-500"
+								href="https://www.linkedin.com/in/m%C3%A9laniecasu/"
+								target="_blank">linkedin</a
+							>
 						</li>
 					</ul>
 				</div>
 				<a
-					class="link inline-block w-full -translate-x-full text-center uppercase lg:w-fit"
+					class="link inline-block w-full -translate-x-full text-center uppercase transition-colors hover:text-firefly-500 lg:w-fit"
 					href="mailto:melanie.casu-pro@outlook.fr">Me contacter</a
 				>
 			</div>
