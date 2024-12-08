@@ -1,6 +1,5 @@
 ---
 const { data } = Astro.props;
-import Separator from "../common/Separator.astro";
 import Button from "../common/Button.astro";
 ---
 
@@ -16,11 +15,6 @@ import Button from "../common/Button.astro";
 						alt={projet.imageMobile.alt}
 					/>
 					{/* IMAGE DESKTOP */}
-					{/* 					<img
-						class="img-desktop hidden lg:mx-auto lg:block lg:h-full lg:w-4/5 lg:rounded-xl lg:object-contain lg:blur-sm xl:mx-0 xl:w-7/12 xl:rounded-none xl:group-odd:rounded-l-xl xl:group-odd:rounded-r-none xl:group-even:rounded-l-none xl:group-even:rounded-r-xl"
-						src={projet.image.src}
-						alt={projet.image.alt}
-					/> */}
 					<img
 						class="img-desktop hidden lg:mx-auto lg:block lg:h-full lg:w-4/5 lg:rounded-xl lg:object-contain lg:blur-sm xl:mx-0 xl:rounded-xl xl:group-odd:w-7/12 xl:group-even:w-6/12"
 						src={projet.image.src}
@@ -33,7 +27,7 @@ import Button from "../common/Button.astro";
 							</h2>
 						</div>
 						<div class="content flex w-full flex-col text-center opacity-0 xl:group-odd:text-end xl:group-even:text-start">
-							{projet.type === "Ecole" && <p class="">OBJECTIF</p>}
+							{projet.type === "Ecole" && <p class="uppercase">Objectif</p>}
 							<p class=" text-firefly-900 xl:text-2xl">{projet.description}</p>
 							{projet.type === "Entreprise" && (
 								<p class="mt-2">
@@ -53,7 +47,10 @@ import Button from "../common/Button.astro";
 						</div>
 					</div>
 				</div>
-				<Separator additionalClass="mt-14 lg:hidden" />
+
+				<div class="mt-14 flex h-[1px] w-full items-center justify-center overflow-visible bg-firefly-900 lg:hidden">
+					<div class="h-3 w-3 rounded-full bg-firefly-900" />
+				</div>
 			</div>
 		))
 	}

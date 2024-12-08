@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Maillage from "../components/homepage/Maillage.astro";
 import Skills from "../components/homepage/Skills.astro";
 import Hero from "../components/homepage/Hero.astro";
+import AboutMe from "../components/homepage/AboutMe.astro";
 
 const title = "Mélanie Casu - portfolio";
 
@@ -32,51 +33,7 @@ const menuLinks = [
 
 <Layout menuLinks={menuLinks} isHome={true} title={title} textureFooter={false}>
 	<Hero />
-	<!-- 	<div id="a-propos">
-		<section class="introduction bg-fantasy-50 bg-texture lg:h-screen">
-			<div class="flex h-[30vh] items-end justify-center overflow-hidden bg-firefly-900 bg-texture">
-				<p class="intro-title relative z-10 translate-y-[110%] font-primary uppercase text-fantasy-50">à propos.</p>
-			</div>
-			<div
-				class="w-full lg:flex lg:h-[70vh] lg:flex-row lg:space-x-14 lg:p-3 lg:pt-14 xl:space-x-16 xl:p-10 xl:pt-28 2xl:space-x-32 2xl:p-14 2xl:pt-36"
-			>
-				<div class="flex h-[70vh] flex-col items-end justify-between px-3 py-10 lg:h-full lg:w-1/2 lg:flex-row lg:p-0 xl:w-2/5">
-					<img
-						class="h-[90%] w-3/5 object-cover object-center lg:h-full lg:w-full xl:h-[60vh]"
-						src="/projets/test.webp"
-						alt="Portrait professionnel d'une développeuse et intégratrice web, assise sur une chaise, en tenue décontractée."
-					/>
-					<div class="mt-6 h-[1px] w-3/4 self-center bg-firefly-500 lg:hidden"></div>
-				</div>
-				<div class="p-3 pb-10 lg:w-1/2 lg:p-0 xl:w-3/5">
-					<p class="intro-description relative text-firefly-900 opacity-0 lg:mt-20">
-						Je suis Mélanie Casu, reconvertie il y a bientôt deux ans dans le développement web. Spécialisée dans l'intégration
-						et le développement front-end de sites webs, je suis actuellement en alternance dans une agence de communication
-						digitale, et suis la formation "Développeur·se/Intégrateur·trice Web" d'OpenClassrooms.
-					</p>
-				</div>
-			</div>
-		</section>
-	</div> -->
-	<section class="h-screen bg-fantasy-50"></section>
-
+	<AboutMe />
 	<Maillage text="voir mes projets" link="/projets" />
-
 	<Skills />
 </Layout>
-<style lang="postcss" is:global>
-	.gradient {
-		background: linear-gradient(180deg, rgba(37,58,60,1) 10%, rgba(249,245,243,1) 100%);
-	}
-	/* PROVISOIRE, CEST LE STYLE DE LANCIEN BLOC INTRO */
-	@media screen and (min-width: 1024px) {
-    .intro-description::before {
-      content: "";
-      @apply absolute -bottom-6 -left-7 w-1/3 h-1/2 border-l-[1px] border-b-[1px] border-firefly-900
-    }
-  }
-
-.introduction img {
-	box-shadow: 5px 5px 10px 1px rgba(37,58,60,0.2); 
-}
-</style>

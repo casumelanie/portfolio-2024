@@ -1,0 +1,72 @@
+---
+
+---
+
+<section
+	id="about-me"
+	class="flex w-full flex-col-reverse items-end justify-end bg-fantasy-50 pt-10 md:gap-6 lg:h-screen lg:flex-row lg:flex-nowrap lg:gap-20"
+>
+	<div
+		class="flex h-full w-full flex-col items-end justify-center space-y-12 px-3 pb-16 lg:w-1/2 lg:py-14 lg:pl-14 xl:py-20 xl:pl-20 2xl:pl-40 2xl:pt-40"
+	>
+		<div class="flex w-full flex-col items-end space-y-4 xl:w-11/12 2xl:w-3/4">
+			<p class="text-end font-medium uppercase">Je suis</p>
+			<p class="text-end">
+				Mélanie Casu, reconvertie il y a bientôt deux ans dans le développement web. Spécialisée dans l'intégration et le
+				développement front-end de sites web, je suis actuellement en alternance dans une agence de communication digitale.
+			</p>
+		</div>
+		<div class="flex w-full flex-col items-start space-y-4 xl:w-11/12 2xl:w-3/4">
+			<p class="font-medium uppercase">Ma formation</p>
+			<p>
+				Initialement diplômée d'un BAC ES, j'ai par la suite suivi et obtenu une licence de psychologie. Pour ma reconversion dans
+				le web quelques années plus tard, je me suis dirigée vers OpenClassrooms, avec la formation
+				"Développeur·se/Intégrateur·trice Web", en alternance, d'une durée de 18 mois.
+			</p>
+		</div>
+	</div>
+	<div class="flex h-full w-full flex-row-reverse flex-nowrap items-end justify-end lg:w-1/2 lg:flex-row lg:items-start">
+		<img
+			class="h-[65vh] w-3/4 max-w-md self-end object-cover object-top pb-20 lg:h-3/4 lg:pb-10"
+			src="/images/melanie-casu.webp"
+			alt="Portrait professionnel d'une développeuse et intégratrice web, assise sur une chaise, en tenue décontractée."
+		/>
+		<h2 class="about-me_titre block h-fit w-fit rotate-180 font-primary uppercase text-firefly-900/40 lg:w-1/4 lg:rotate-0">
+			À propos
+		</h2>
+	</div>
+</section>
+<style>
+	#about-me .about-me_titre {
+		writing-mode: vertical-lr;
+		text-orientation: mixed;
+		font-size: 14vw;
+		line-height: normal;
+		white-space: nowrap;
+	}
+
+	#about-me img {
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+	}
+
+	@media screen and (min-width: 1024px) {
+		#about-me .about-me_titre {
+			font-size: 10vw;
+		}
+	}
+</style>
+
+<script>
+	import gsap from "gsap";
+	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
+	gsap.registerPlugin(ScrollTrigger);
+
+	let tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: "#about-me",
+			start: "top 20%"
+		}
+	});
+
+	tl.to("#about-me img", { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 1 });
+</script>

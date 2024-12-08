@@ -2,7 +2,6 @@
 
 ---
 
-<!-- TODO: AJOUTER UN SCROLL DOWN A LA FIN DE L'ANIMATION -->
 <section class="hero relative z-40 flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
 	<div class="relative flex h-[15%] w-full flex-col justify-end lg:h-full lg:w-[10%] lg:flex-row">
 		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-0 lg:rotate-180">portfolio</p>
@@ -38,30 +37,28 @@
 	</div>
 	<div class="relative flex h-[15%] w-full flex-col items-end justify-start lg:h-full lg:w-[10%] lg:items-start lg:justify-end">
 		<div class="hero-border w-0 border-t-2 border-fantasy-50 opacity-65 lg:h-0 lg:border-l-2 lg:border-t-0"></div>
-		<!-- fleche scroll down -->
 	</div>
 </section>
 
 <style is:global lang="postcss">
-.split-text span {
+.hero .split-text span {
 	@apply inline-block font-primary opacity-75 text-7xl text-[150px] md:text-[250px] lg:text-[300px] xl:text-[350px] 2xl:text-[400px];
 	transform-origin: 50% 50%;
 }
 
-.text-decoratif {
+.hero .text-decoratif {
 	font-size: 19vw;
 	line-height: 0.70;
 }
 
 @media screen and (min-width: 1024px) {
-	.text-decoratif {
+	.hero .text-decoratif {
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
 		font-size: 10vw;
 	}
 }
 </style>
-
 <script>
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
@@ -94,7 +91,7 @@
 	let mmMobile = gsap.matchMedia();
 	mmMobile.add("(max-width: 1023px)", () => {
 		let tl = gsap.timeline({});
-		tl.to(".hero-border", { width: "100%", duration: 1, delay: 3.2 }, "<");
+		tl.to(".hero .hero-border", { width: "100%", duration: 1, delay: 3.2 }, "<");
 		tl.to(
 			splitText,
 			{
@@ -110,9 +107,9 @@
 			},
 			"<"
 		);
-		tl.to(".hero-text h1", { translateY: "0", duration: 0.8 });
-		tl.to(".split-text", { opacity: 0.5, duration: 1 }, "<");
-		tl.to(".text-decoratif", { opacity: 0.05, duration: 0.5 });
+		tl.to(".hero .hero-text h1", { translateY: "0", duration: 0.8 });
+		tl.to(".hero .split-text", { opacity: 0.5, duration: 1 }, "<");
+		tl.to(".hero .text-decoratif", { opacity: 0.05, duration: 0.5 });
 		tl.to("body", { overflow: "visible" });
 	});
 
@@ -120,7 +117,7 @@
 	let mmDesktop = gsap.matchMedia();
 	mmDesktop.add("(min-width: 1024px)", () => {
 		let tl = gsap.timeline({});
-		tl.to(".hero-border", { height: "100%", duration: 1, delay: 3.5 });
+		tl.to(".hero .hero-border", { height: "100%", duration: 1, delay: 3.5 });
 		tl.to(
 			splitText,
 			{
@@ -136,10 +133,9 @@
 			},
 			"<"
 		);
-		tl.to(".hero-text h1", { translateY: "0", duration: 0.8 });
-		tl.to(".split-text", { opacity: 0.2, duration: 1 }, "<");
-		tl.to(".text-decoratif", { opacity: 0.05, duration: 0.5 });
-
+		tl.to(".hero .hero-text h1", { translateY: "0", duration: 0.8 });
+		tl.to(".hero .split-text", { opacity: 0.2, duration: 1 }, "<");
+		tl.to(".hero .text-decoratif", { opacity: 0.05, duration: 0.5 });
 		tl.to("body", { overflow: "visible" });
 	});
 </script>
