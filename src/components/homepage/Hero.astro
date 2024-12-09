@@ -104,7 +104,7 @@
 		let mmMobile = gsap.matchMedia();
 		mmMobile.add("(max-width: 1023px)", () => {
 			let tl = gsap.timeline({});
-			tl.to("body.first-visit", { overflow: "hidden" });
+			tl.to(".first-visit", { overflow: "hidden" });
 			tl.from(".hero .hero-border", { width: "0", duration: 1, delay: 3.2 });
 			tl.from(splitText, { fontSize: "30vw", duration: 2 }, "<");
 			tl.to(
@@ -124,14 +124,14 @@
 			tl.from(".hero .hero-text h1", { translateY: "100%", duration: 0.8 });
 			tl.from(".hero .split-text", { opacity: 1, duration: 1 }, "<");
 			tl.from(".hero .text-decoratif", { opacity: 0, duration: 0.5 });
-			tl.to("body.first-visit", { overflow: "visible" });
+			tl.to(".first-visit", { overflow: "visible" });
 		});
 
 		// DESKTOP ANIMATION
 		let mmDesktop = gsap.matchMedia();
 		mmDesktop.add("(min-width: 1024px)", () => {
 			let tl = gsap.timeline({});
-			tl.to("body.first-visit", { overflow: "hidden" });
+			tl.to(".first-visit", { overflow: "hidden" });
 			tl.from(".hero .hero-border", { height: "0", duration: 1, delay: 3.5 });
 			tl.from(splitText, { fontSize: "20vw", duration: 2 }, "<");
 			tl.to(
@@ -151,7 +151,7 @@
 			tl.from(".hero .hero-text h1", { translateY: "100%", duration: 0.8 });
 			tl.from(".hero .split-text", { opacity: 1, duration: 1 }, "<");
 			tl.from(".hero .text-decoratif", { opacity: 0, duration: 0.5 });
-			tl.to("body.first-visit", { overflow: "visible" });
+			tl.to(".first-visit", { overflow: "visible" });
 		});
 
 		setTimeout(() => {
