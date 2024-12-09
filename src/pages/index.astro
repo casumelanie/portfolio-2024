@@ -31,9 +31,11 @@ const menuLinks = [
 ];
 ---
 
-<Layout menuLinks={menuLinks} isHome={true} title={title} textureFooter={false}>
-	<Hero />
-	<AboutMe />
-	<Maillage text="voir mes projets" link="/projets" />
-	<Skills />
+<Layout menuLinks={menuLinks} title={title} textureFooter={false}>
+	<main>
+		<Hero />
+		<AboutMe />
+		<Maillage text="voir mes projets" link="/projets" />
+		<Skills />
+	</main>
 </Layout>

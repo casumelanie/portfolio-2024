@@ -3,7 +3,7 @@
 ---
 
 <section
-	id="about-me"
+	id="a-propos"
 	class="flex w-full flex-col-reverse items-end justify-end bg-fantasy-50 pt-10 md:gap-6 lg:h-screen lg:flex-row lg:flex-nowrap lg:gap-20"
 >
 	<div
@@ -31,13 +31,13 @@
 			src="/images/melanie-casu.webp"
 			alt="Portrait professionnel d'une développeuse et intégratrice web, assise sur une chaise, en tenue décontractée."
 		/>
-		<h2 class="about-me_titre block h-fit w-fit rotate-180 font-primary uppercase text-firefly-900/40 lg:w-1/4 lg:rotate-0">
+		<h2 class="a-propos_titre block h-fit w-fit rotate-180 font-primary uppercase text-firefly-900/40 lg:w-1/4 lg:rotate-0">
 			À propos
 		</h2>
 	</div>
 </section>
 <style>
-	#about-me .about-me_titre {
+	#a-propos .a-propos_titre {
 		writing-mode: vertical-lr;
 		text-orientation: mixed;
 		font-size: 14vw;
@@ -45,12 +45,12 @@
 		white-space: nowrap;
 	}
 
-	#about-me img {
+	#a-propos img {
 		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
 	}
 
 	@media screen and (min-width: 1024px) {
-		#about-me .about-me_titre {
+		#a-propos .a-propos_titre {
 			font-size: 10vw;
 		}
 	}
@@ -63,10 +63,10 @@
 
 	let tl = gsap.timeline({
 		scrollTrigger: {
-			trigger: "#about-me",
+			trigger: "#a-propos",
 			start: "top 20%"
 		}
 	});
 
-	tl.to("#about-me img", { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 1 });
+	tl.to("#a-propos img", { clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)", duration: 1 });
 </script>

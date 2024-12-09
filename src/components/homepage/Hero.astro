@@ -4,12 +4,12 @@
 
 <section class="hero relative z-40 flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
 	<div class="relative flex h-[15%] w-full flex-col justify-end lg:h-full lg:w-[10%] lg:flex-row">
-		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-0 lg:rotate-180">portfolio</p>
-		<div class="hero-border w-0 border-b-2 border-fantasy-50 opacity-65 lg:h-0 lg:border-b-0 lg:border-r-2"></div>
+		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-5 lg:rotate-180">portfolio</p>
+		<div class="hero-border w-full border-b-2 border-fantasy-50 opacity-65 lg:h-full lg:w-0 lg:border-b-0 lg:border-r-2"></div>
 	</div>
 	<div class="relative flex h-[70%] w-full items-center justify-center lg:h-full lg:w-[90%]">
 		<div class="hero-text">
-			<div class="split-text pointer-events-none flex flex-col items-center text-fantasy-50">
+			<div class="split-text pointer-events-none flex flex-col items-center text-fantasy-50 opacity-20">
 				<p class="flex flex-row flex-nowrap">
 					<span class="char">M</span>
 					<span class="char">é</span>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="mt-6 overflow-hidden text-center">
 				<h1
-					class="subtitle inline-block translate-y-full font-primary text-2xl text-fantasy-50 md:text-4xl lg:pb-4 xl:text-5xl 2xl:text-6xl"
+					class="subtitle inline-block translate-y-0 font-primary text-2xl text-fantasy-50 md:text-4xl lg:pb-4 xl:text-5xl 2xl:text-6xl"
 				>
 					développeuse intégratrice web
 				</h1>
@@ -36,14 +36,15 @@
 		</div>
 	</div>
 	<div class="relative flex h-[15%] w-full flex-col items-end justify-start lg:h-full lg:w-[10%] lg:items-start lg:justify-end">
-		<div class="hero-border w-0 border-t-2 border-fantasy-50 opacity-65 lg:h-0 lg:border-l-2 lg:border-t-0"></div>
+		<div class="hero-border w-full border-t-2 border-fantasy-50 opacity-65 lg:h-full lg:w-0 lg:border-l-2 lg:border-t-0"></div>
 	</div>
 </section>
 
 <style is:global lang="postcss">
-.hero .split-text span {
-	@apply inline-block font-primary opacity-75 text-7xl text-[150px] md:text-[250px] lg:text-[300px] xl:text-[350px] 2xl:text-[400px];
+.hero .split-text .char {
+	@apply inline-block font-primary opacity-75;
 	transform-origin: 50% 50%;
+    font-size: 25vw;
 }
 
 .hero .text-decoratif {
@@ -51,91 +52,110 @@
 	line-height: 0.70;
 }
 
+/* DESKTOP */
 @media screen and (min-width: 1024px) {
 	.hero .text-decoratif {
 		writing-mode: vertical-rl;
 		text-orientation: mixed;
 		font-size: 10vw;
 	}
+
+    .hero .split-text .char {
+        font-size: 15vw;
+        line-height: 1;
+    }
 }
 </style>
 <script>
 	import gsap from "gsap";
 	import { ScrollTrigger } from "gsap/src/ScrollTrigger";
 	gsap.registerPlugin(ScrollTrigger);
+	const body = document.querySelector<HTMLElement>("body");
 
-	const splitText = document.querySelectorAll<HTMLElement>(".split-text .char");
+	// Lancer l'animation que lors de l'ouverture de la session
+	if (!sessionStorage.getItem("heroPlayed")) {
+		body.classList.add("first-visit");
+		const splitText = document.querySelectorAll<HTMLElement>(".split-text .char");
 
-	/* FONCTION DE PLACEMENT ALÉATOIRE DES LETTRES */
-	function positionCharsRandomly() {
-		// const isMobileVersion = window.innerWidth <= 1023;
+		/* FONCTION DE PLACEMENT ALÉATOIRE DES LETTRES */
+		function positionCharsRandomly() {
+			// const isMobileVersion = window.innerWidth <= 1023;
 
-		splitText.forEach((char) => {
-			// Générer des positions / rotations aléatoires
-			const randomY = Math.random() * 600 - 300; // entre -300px et 300px
-			const randomZ = Math.random() * 50 - 50 / 2; // Décalage en profondeur
-			const randomRotationY = Math.random() * 1000 - 500; // entre -500° et 500°
+			splitText.forEach((char) => {
+				// Générer des positions / rotations aléatoires
+				const randomY = Math.random() * 600 - 300; // entre -300px et 300px
+				const randomZ = Math.random() * 50 - 50 / 2; // Décalage en profondeur
+				const randomRotationY = Math.random() * 1000 - 500; // entre -500° et 500°
 
-			// Appliquer les transformations initiales via GSAP
-			gsap.set(char, {
-				y: randomY,
-				z: randomZ,
-				rotationY: randomRotationY
+				// Appliquer les transformations initiales via GSAP
+				gsap.set(char, {
+					y: randomY,
+					z: randomZ,
+					rotationY: randomRotationY
+				});
 			});
+
+			body.style.overflow = "hidden";
+		}
+		// Appeler la fonction après le chargement de la page
+		window.addEventListener("load", positionCharsRandomly);
+
+		// MOBILE ANIMATION
+		let mmMobile = gsap.matchMedia();
+		mmMobile.add("(max-width: 1023px)", () => {
+			let tl = gsap.timeline({});
+			tl.to("body.first-visit", { overflow: "hidden" });
+			tl.from(".hero .hero-border", { width: "0", duration: 1, delay: 3.2 });
+			tl.from(splitText, { fontSize: "30vw", duration: 2 }, "<");
+			tl.to(
+				splitText,
+				{
+					y: 0,
+					z: 0,
+					rotationY: 0,
+					duration: 2,
+					stagger: {
+						from: "random",
+						ease: "power2.in"
+					}
+				},
+				"<"
+			);
+			tl.from(".hero .hero-text h1", { translateY: "100%", duration: 0.8 });
+			tl.from(".hero .split-text", { opacity: 1, duration: 1 }, "<");
+			tl.from(".hero .text-decoratif", { opacity: 0, duration: 0.5 });
+			tl.to("body.first-visit", { overflow: "visible" });
 		});
+
+		// DESKTOP ANIMATION
+		let mmDesktop = gsap.matchMedia();
+		mmDesktop.add("(min-width: 1024px)", () => {
+			let tl = gsap.timeline({});
+			tl.to("body.first-visit", { overflow: "hidden" });
+			tl.from(".hero .hero-border", { height: "0", duration: 1, delay: 3.5 });
+			tl.from(splitText, { fontSize: "20vw", duration: 2 }, "<");
+			tl.to(
+				splitText,
+				{
+					y: 0,
+					z: 0,
+					rotationY: 0,
+					duration: 2,
+					stagger: {
+						from: "random",
+						ease: "power2.in"
+					}
+				},
+				"<"
+			);
+			tl.from(".hero .hero-text h1", { translateY: "100%", duration: 0.8 });
+			tl.from(".hero .split-text", { opacity: 1, duration: 1 }, "<");
+			tl.from(".hero .text-decoratif", { opacity: 0, duration: 0.5 });
+			tl.to("body.first-visit", { overflow: "visible" });
+		});
+
+		setTimeout(() => {
+			sessionStorage.setItem("heroPlayed", "true");
+		}, 3000);
 	}
-	// Appeler la fonction après le chargement de la page
-	window.addEventListener("load", positionCharsRandomly);
-
-	// MOBILE ANIMATION
-	let mmMobile = gsap.matchMedia();
-	mmMobile.add("(max-width: 1023px)", () => {
-		let tl = gsap.timeline({});
-		tl.to(".hero .hero-border", { width: "100%", duration: 1, delay: 3.2 }, "<");
-		tl.to(
-			splitText,
-			{
-				y: 0,
-				z: 0,
-				fontSize: "20vw",
-				rotationY: 0,
-				duration: 2,
-				stagger: {
-					from: "random",
-					ease: "power2.in"
-				}
-			},
-			"<"
-		);
-		tl.to(".hero .hero-text h1", { translateY: "0", duration: 0.8 });
-		tl.to(".hero .split-text", { opacity: 0.5, duration: 1 }, "<");
-		tl.to(".hero .text-decoratif", { opacity: 0.05, duration: 0.5 });
-		tl.to("body", { overflow: "visible" });
-	});
-
-	// DESKTOP ANIMATION
-	let mmDesktop = gsap.matchMedia();
-	mmDesktop.add("(min-width: 1024px)", () => {
-		let tl = gsap.timeline({});
-		tl.to(".hero .hero-border", { height: "100%", duration: 1, delay: 3.5 });
-		tl.to(
-			splitText,
-			{
-				y: 0,
-				z: 0,
-				fontSize: "15vw",
-				rotationY: 0,
-				duration: 2,
-				stagger: {
-					from: "random",
-					ease: "power2.in"
-				}
-			},
-			"<"
-		);
-		tl.to(".hero .hero-text h1", { translateY: "0", duration: 0.8 });
-		tl.to(".hero .split-text", { opacity: 0.2, duration: 1 }, "<");
-		tl.to(".hero .text-decoratif", { opacity: 0.05, duration: 0.5 });
-		tl.to("body", { overflow: "visible" });
-	});
 </script>
