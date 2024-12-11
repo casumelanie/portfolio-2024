@@ -8,10 +8,10 @@ const { text, link } = Astro.props;
 ---
 
 <section class="maillage relative flex h-fit w-full flex-col items-center bg-firefly-900 py-10 lg:py-24">
-	<a href={link} class="nav absolute left-0 top-0 z-10 h-full w-full lg:cursor-none"></a>
+	<a href={link} aria-labelledby="link-description" class="nav absolute left-0 top-0 z-10 h-full w-full lg:cursor-none"></a>
 	<div class="marquee pointer-events-none flex w-full flex-row flex-nowrap overflow-hidden py-2 sm:py-3 lg:py-3 xl:py-5">
 		<ul class="marquee-right flex flex-row flex-nowrap space-x-6 px-3 md:space-x-14 md:px-7">
-			<li class="text-outline font-bebas">{text}</li>
+			<li id="link-description" class="text-outline font-bebas">{text}</li>
 			<li class="font-zenloop">{text}</li>
 			<li class="font-nothing capitalize">{text}</li>
 		</ul>
