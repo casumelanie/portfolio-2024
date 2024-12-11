@@ -5,7 +5,9 @@ import Skills from "../components/homepage/Skills.astro";
 import Hero from "../components/homepage/Hero.astro";
 import AboutMe from "../components/homepage/AboutMe.astro";
 
-const title = "Mélanie Casu - portfolio";
+const title = "Développeuse & Intégratrice Web | Portfolio Mélanie Casu";
+const metaDescription =
+	"Bienvenue sur le portfolio de Mélanie Casu. Un aperçu de mon univers de développeuse front-end et intégratrice web : projets, formation et compétences, réunis dans ce portfolio dédié au web.";
 
 const menuLinks = [
 	{
@@ -31,7 +33,7 @@ const menuLinks = [
 ];
 ---
 
-<Layout menuLinks={menuLinks} title={title} textureFooter={false}>
+<Layout menuLinks={menuLinks} title={title} textureFooter={false} metaDescription={metaDescription}>
 	<main>
 		<Hero />
 		<AboutMe />

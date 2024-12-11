@@ -7,11 +7,11 @@ const { title, h1 } = Astro.props;
 ---
 
 <section class="banner h-fit bg-fantasy-50 bg-texture">
-	<div class="flex h-[30vh] items-end justify-center overflow-hidden bg-firefly-900 bg-texture lg:h-[40vh]">
+	<div class="flex h-[30vh] flex-col items-center justify-end overflow-hidden bg-firefly-900 bg-texture lg:h-[40vh]">
+		<h1 class="mb-14 text-lg text-fantasy-50 opacity-0 md:mb-10 lg:mb-16">{h1}</h1>
 		<p class="banner-title relative z-10 translate-y-[110%] font-primary uppercase text-fantasy-50">
 			{title}.
 		</p>
-		<h1 class="hidden">{h1}</h1>
 	</div>
 </section>
 <style lang="postcss" is:global>
@@ -38,4 +38,5 @@ const { title, h1 } = Astro.props;
 		}
 	});
 	tl.to(".banner .banner-title", { translateY: 0, duration: 1, delay: 3.5 });
+	tl.to(".banner h1", { opacity: 1, duration: 1 });
 </script>

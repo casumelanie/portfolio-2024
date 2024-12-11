@@ -7,19 +7,22 @@ interface Props {
 	title: string;
 	textureFooter: boolean;
 	menuLinks: any;
+	metaDescription: string;
 }
 
-const { title, textureFooter, menuLinks } = Astro.props;
+const { title, textureFooter, menuLinks, metaDescription } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="fr">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta charset="UTF-8" />
+		<meta name="google-site-verification" content="HlsAuTX-AErMCVMNVhTh79ELFeYgcUuPg0tmAwd7mOc" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={metaDescription} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="title" content={title} />
 		<title>{title}</title>
 	</head>
 	<body class="relative bg-firefly-900">
