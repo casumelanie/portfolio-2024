@@ -4,12 +4,12 @@
 
 <section class="hero relative z-40 flex h-screen flex-col justify-between overflow-hidden bg-firefly-900 lg:flex-row lg:flex-nowrap">
 	<div class="relative flex h-[15%] w-full flex-col justify-end lg:h-full lg:w-[10%] lg:flex-row">
-		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-5 lg:rotate-180">portfolio</p>
+		<p class="text-decoratif self-center font-primary text-8xl uppercase text-fantasy-50 opacity-35 lg:rotate-180">portfolio</p>
 		<div class="hero-border w-full border-b-2 border-fantasy-50 opacity-65 lg:h-full lg:w-0 lg:border-b-0 lg:border-r-2"></div>
 	</div>
 	<div class="relative flex h-[70%] w-full items-center justify-center lg:h-full lg:w-[90%]">
 		<div class="hero-text">
-			<div class="split-text pointer-events-none flex flex-col items-center text-fantasy-50 opacity-20">
+			<div class="split-text pointer-events-none flex flex-col items-center text-fantasy-50 opacity-40">
 				<p class="flex flex-row flex-nowrap">
 					<span class="char">M</span>
 					<span class="char">é</span>
@@ -33,10 +33,14 @@
 					Développeuse <span class="font-content text-xl md:text-2xl lg:text-3xl xl:text-4xl">&</span> Intégratrice web
 				</h1>
 			</div>
+			<!-- 			<p class="hidden lg:mt-1 lg:block lg:self-end lg:text-center">SCROLL DOWN</p>
+ -->
 		</div>
 	</div>
 	<div class="relative flex h-[15%] w-full flex-col items-end justify-start lg:h-full lg:w-[10%] lg:items-start lg:justify-end">
 		<div class="hero-border w-full border-t-2 border-fantasy-50 opacity-65 lg:h-full lg:w-0 lg:border-l-2 lg:border-t-0"></div>
+		<!-- 		<p class="mt-1 self-center lg:hidden">SCROLL DOWN</p>
+ -->
 	</div>
 </section>
 
@@ -45,6 +49,7 @@
 	@apply inline-block font-primary opacity-75;
 	transform-origin: 50% 50%;
     font-size: 25vw;
+	line-height: 0.8;
 }
 
 .hero .text-decoratif {
