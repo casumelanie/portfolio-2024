@@ -28,22 +28,23 @@ const { title, textureFooter, menuLinks, metaDescription } = Astro.props;
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Person",
-				"name": "Mélanie Casu",
-				"jobTitle": "Développeur intégrateur web",
-				"image": "https://melaniecasu.netlify.app/images/couverture-rs.png",
-				"url": "https://melaniecasu.netlify.app/",
-				"email": "melanie.casu-pro@outlook.fr",
-				"nationality": "Française"
-			}
-		</script>
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"name": "Mélanie Casu Portfolio",
-				"image": "https://melaniecasu.netlify.app/images/couverture-rs.png",
-				"url": "https://melaniecasu.netlify.app/"
+				"@graph": [
+					{
+						"@type": "Person",
+						"name": "Mélanie Casu",
+						"jobTitle": "Développeur intégrateur web",
+						"image": "https://melaniecasu.netlify.app/images/couverture-rs.png",
+						"url": "https://melaniecasu.netlify.app/",
+						"email": "melanie.casu-pro@outlook.fr",
+						"nationality": "Française"
+					},
+					{
+						"@type": "WebSite",
+						"name": "Mélanie Casu Portfolio",
+						"image": "https://melaniecasu.netlify.app/images/couverture-rs.png",
+						"url": "https://melaniecasu.netlify.app/"
+					}
+				]
 			}
 		</script>
 
