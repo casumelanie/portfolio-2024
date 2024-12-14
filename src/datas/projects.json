@@ -61,7 +61,7 @@
 	},
 	{
 		"name": "OhMyFood",
-		"link": "#",
+		"link": "https://casumelanie.github.io/ohmyfood/",
 		"type": "Ecole",
 		"year": 2024,
 		"description": "Intégrer une maquette en mobile-first et implémenter des animations avec SASS, sur la base d'une maquette Figma.",
@@ -72,11 +72,13 @@
 		"imageMobile": {
 			"src": "/projets/ohmyfood-mobile.webp",
 			"alt": "Capture d'écran du site web Ohmyfood avec un design coloré et vue sur une carte de restaurant"
-		}
+		},
+		"technologies": "HTML, Sass"
 	},
 	{
 		"name": "Kasa",
-		"link": "#",
+		"link": "https://github.com/casumelanie/Kasa",
+		"linkIsRepo": true,
 		"type": "Ecole",
 		"year": 2024,
 		"description": "Implémenter le front-end de cette application de location de logements, le tout de façon responsive.",
@@ -87,11 +89,13 @@
 		"imageMobile": {
 			"src": "/projets/kasa-mobile.webp",
 			"alt": "Capture d'écran du site web Kasa"
-		}
+		},
+		"technologies": "React"
 	},
 	{
 		"name": "Sophie Bluel",
-		"link": "#",
+		"link": "https://github.com/casumelanie/Sophie-Bluel",
+		"linkIsRepo": true,
 		"type": "Ecole",
 		"year": 2024,
 		"description": "Rendre le site web de cette architecte d'intérieur dynamique et fonctionnel.",
@@ -102,6 +106,7 @@
 		"imageMobile": {
 			"src": "/projets/sophie-bluel-mobile.webp",
 			"alt": "Capture d'écran du site web de la photographe Sophie Bluel"
-		}
+		},
+		"technologies": "HTML, CSS, JavaScript"
 	}
 ]
